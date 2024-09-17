@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar for Contacts -->
+        <div class="contact-list">
+            <div class="header">
+                <h2>Chats</h2>
+                <button class="new-chat-btn"><i class="fas fa-edit"></i></button>
+            </div>
+            <ul>
+                <li class="contact active">
+                    <img src="./chatting/white front image dress.png" alt="Avatar" class="avatar">
+                    <div class="contact-info">
+                        <h3>John Doe</h3>
+                        <p>Last message</p>
+                    </div>
+                </li>
+                <!-- Repeat Contact Items -->
+            </ul>
+        </div>
+
+        <!-- Chat Window -->
+        <div class="chat-window">
+            <div class="chat-header">
+                <img src="./chatting/front image.png" alt="Avatar" class="avatar">
+                <h3>John Doe</h3>
+            </div>
+            <div class="chat-messages">
+                <!-- Messages go here -->
+                <div class="message received">
+                    <p>Hello there!</p>
+                    <span class="time">10:00 AM</span>
+                </div>
+                <div class="message sent">
+                    <p>Hi! How are you?</p>
+                    <span class="time">10:02 AM</span>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message">
+                <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.chat-container {
+    display: flex;
+    height: 100vh;
+    max-width: 1200px;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar for Contacts */
+.contact-list {
+    width: 30%;
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-list .header {
+    padding: 15px;
+    background-color: #00bfa5;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.contact:hover, .contact.active {
+    background-color: #f5f5f5;
+}
+
+.contact img.avatar {
+    border-radius: 1%;
+    margin-right: 2px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+/* Chat Window */
+.chat-window {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.chat-header {
+    padding: 15px;
+    background-color: #00bfa5;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.chat-header img.avatar {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #e5ddd5;
+}
+
+.message {
+    max-width: 60%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.message.received {
+    background-color: #ffffff;
+    align-self: flex-start;
+}
+
+.message.sent {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+}
+
+.message .time {
+    font-size: 0.8em;
+    color: #666;
+    position: absolute;
+    bottom: -15px;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.chat-input input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    margin-right: 10px;
+    outline: none;
+}
+
+.chat-input .send-btn {
+    background-color: #00bfa5;
+    border: none;
+    color: #ffffff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.chat-input .send-btn:hover {
+    background-color: #009688;
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const sendButton = document.querySelector('.send-btn');
+    const inputField = document.querySelector('.chat-input input[type="text"]');
+    const chatMessages = document.querySelector('.chat-messages');
+
+    sendButton.addEventListener('click', () => {
+        const messageText = inputField.value.trim();
+        if (messageText) {
+            const newMessage = document.createElement('div');
+            newMessage.classList.add('message', 'sent');
+            newMessage.innerHTML = `<p>${messageText}</p><span class="time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>`;
+            chatMessages.appendChild(newMessage);
+            inputField.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    });
+
+    inputField.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendButton.click();
+        }
+    });
+
+    // Add event listeners for switching contacts
+    const contacts = document.querySelectorAll('.contact');
+    contacts.forEach(contact => {
+        contact.addEventListener('click', () => {
+            contacts.forEach(c => c.classList.remove('active'));
+            contact.classList.add('active');
+        });
+    });
+});
+
+</script>

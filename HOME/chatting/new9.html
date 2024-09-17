@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuManage - Your Ultimate Document Management Solution</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="falling-header">DocuManage</h1>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h2 class="hero-title">Efficient, Secure, and User-Friendly Document Management</h2>
+            <p>Organize, manage, and access your documents with ease.</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search documents..." />
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <div class="feature">
+            <i class="fas fa-upload feature-icon"></i>
+            <h3>Easy Upload</h3>
+            <p>Quickly upload and categorize your documents.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-lock feature-icon"></i>
+            <h3>Secure Storage</h3>
+            <p>Top-notch security to protect your sensitive data.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-share-alt feature-icon"></i>
+            <h3>Collaborate</h3>
+            <p>Share documents easily with team members.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-history feature-icon"></i>
+            <h3>Version Control</h3>
+            <p>Maintain document history with comprehensive version control.</p>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>At DocuManage, we provide a seamless document management experience designed to boost your productivity.</p>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Have questions? <a href="mailto:info@documanage.com">Email us</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 DocuManage. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+   /* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #004080;
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(-100px);
+}
+
+.navbar nav ul {
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin: 0 15px;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: #ff9933;
+}
+
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(45deg, #0066cc, #00ccff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding-top: 60px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: slide-in 1s forwards;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    width: 70%;
+}
+
+.search-bar button {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #ff9933;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #ff6600;
+}
+
+/* Feature Section */
+.features-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.feature {
+    text-align: center;
+    padding: 20px;
+    max-width: 250px;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: #004080;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.feature-icon:hover {
+    transform: scale(1.1);
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* About and Contact Sections */
+.about-section, .contact-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about-section h2, .contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-section p, .contact-section p {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Animations */
+@keyframes fall {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to falling header */
+.falling-header {
+    animation: fall 1s ease-out forwards;
+}
+ 
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // Header falls down on page load, already handled by CSS animation
+    // Additional animations or interactive behaviors can be added here
+
+    // Example: Add smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('.navbar nav ul li a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const sectionId = this.getAttribute('href');
+            document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+});
+
+</script>

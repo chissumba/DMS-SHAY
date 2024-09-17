@@ -1,0 +1,214 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>upload-documents-form</title>
+          <link rel="stylesheet" href="styles.css">
+      </head>
+      <body style="background-color: lightpink;">
+          <header>
+              <style>
+
+              .body{
+                background-color: skyblue;
+
+              }
+
+              .container {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0;
+              text-decoration: none;
+          }
+          
+          .logo img {
+              height: 100px;
+              width: 300px;
+          }
+          nav ul {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              display: flex;
+              font-size: xx-large;
+          }
+          
+          nav ul li {
+              margin-left: 0px;
+          }
+          
+          nav ul li a {
+              color: white;
+              text-decoration: none;
+              padding: 5px 10px;
+              font-size: xx-large;
+          }
+          
+          nav ul li a:hover {
+              background-color: purple;
+              border-radius: 5px;
+          }    
+          </style>
+              <div class="container">
+                  <div class="logo">
+                      <img src="./imagies/ECHO FLUX.png" alt="Logo">
+                  </div>
+                  <nav>
+                      <ul>
+                          <li><a href="./index.html">Home</a></li>
+                          <li><a href="./about.html">About</a></li>
+                          <li><a href="service.html">Services</a></li>
+                          <li><a href="./Contact.html">Contact</a></li>
+                          <li><a href="login.html">Login</a></li>
+                      </ul>
+                  </nav>
+              </div>
+          </header> 
+        <h1>Quiz Game</h1>
+    </header>
+    <main>
+        <section class="quiz-section">
+            <h2>Question 1</h2>
+            <p>What is the capital of France?</p>
+            <ul>
+                <li><input type="radio" id="question1-option1" name="question1"><label for="question1-option1">Paris</label></li>
+                <li><input type="radio" id="question1-option2" name="question1"><label for="question1-option2">London</label></li>
+                <li><input type="radio" id="question1-option3" name="question1"><label for="question1-option3">Berlin</label></li>
+            </ul>
+            <button class="next-button">Next</button>
+        </section>
+        <section class="quiz-section">
+            <h2>Question 2</h2>
+            <p>What is the largest planet in our solar system?</p>
+            <ul>
+                <li><input type="radio" id="question2-option1" name="question2"><label for="question2-option1">Earth</label></li>
+                <li><input type="radio" id="question2-option2" name="question2"><label for="question2-option2">Saturn</label></li>
+                <li><input type="radio" id="question2-option3" name="question2"><label for="question2-option3">Jupiter</label></li>
+            </ul>
+            <button class="next-button">Next</button>
+        </section>
+        <section class="quiz-section">
+            <h2>Question 3</h2>
+            <p>Who painted the Mona Lisa?</p>
+            <ul>
+                <li><input type="radio" id="question3-option1" name="question3"><label for="question3-option1">Leonardo da Vinci</label></li>
+                <li><input type="radio" id="question3-option2" name="question3"><label for="question3-option2">Michelangelo</label></li>
+                <li><input type="radio" id="question3-option3" name="question3"><label for="question3-option3">Raphael</label></li>
+            </ul>
+            <button class="submit-button">Submit</button>
+        </section>
+        <div class="result-section">
+            <h2>Results</h2>
+            <p class="result-message"></p>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+
+.quiz-section {
+    display: none;
+}
+
+.quiz-section.active {
+    display: block;
+}
+
+.next-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.next-button:hover {
+    background-color: #3e8e41;
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #3e8e41;
+}
+
+.result-section {
+    display: none;
+}
+
+.result-section.active {
+    display: block;
+}
+
+.result-message {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+</style>
+
+<script>
+
+let currentQuestion = 0;
+let score = 0;
+
+document.querySelectorAll('.next-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const currentSection = document.querySelectorAll('.quiz-section')[currentQuestion];
+        const nextSection = document.querySelectorAll('.quiz-section')[currentQuestion + 1];
+        
+        if (nextSection) {
+            currentSection.classList.remove('active');
+            nextSection.classList.add('active');
+            currentQuestion++;
+        }
+    });
+});
+
+document.querySelector('.submit-button').addEventListener('click', () => {
+    const resultSection = document.querySelector('.result-section');
+    const resultMessage = document.querySelector('.result-message');
+    
+    resultSection.classList.add('active');
+    
+    if (score >= 2) {
+        result
+
+
+resultMessage.textContent = 'Congratulations! You scored ' + score + ' out of 3.';
+} else {
+resultMessage.textContent = 'Sorry, you scored ' + score + ' out of 3. Try again!';
+}
+});
+
+document.querySelectorAll('input[type="radio"]').forEach(radio => {
+radio.addEventListener('click', () => {
+const question = radio.name;
+const answer = (link unavailable);
+
+if (question === 'question1' && answer === 'question1-option1') {
+    score++;
+} else if (question === 'question2' && answer === 'question2-option3') {
+    score++;
+} else if (question === 'question3' && answer === 'question3-option1') {
+    score++;
+}
+});
+});
+
+
+

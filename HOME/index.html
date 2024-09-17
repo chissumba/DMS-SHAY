@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuManage - Document Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="./about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>DocuManage - Document Management System</h1>
+            <p>Streamline your document workflow with our intuitive and secure platform.</p>
+            <button>Sign Up for Free</button>
+        </section>
+        <section id="features">
+            <h2>Features</h2>
+            <ul>
+                <li>Document Upload and Storage</li>
+                <li>Collaboration and Sharing</li>
+                <li>Version Control and History</li>
+                <li>Security and Access Controls</li>
+            </ul>
+        </section>
+        <section id="pricing">
+            <h2>Pricing</h2>
+            <ul>
+                <li>Free - Up to 5 users, 1GB storage</li>
+                <li>Pro - $10/user/month, 10GB storage</li>
+                <li>Enterprise - Custom pricing, 100GB+ storage</li>
+            </ul>
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>DocuManage is a cloud-based document management system designed to simplify your document workflow.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 DocuManage. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: blue;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    background-image: linear-gradient(to bottom, #333, #555);
+    color: #fff;
+    padding: 2em;
+    text-align: center;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 1em 2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#features, #pricing, #about {
+    padding: 2em;
+}
+
+#features ul, #pricing ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#features li, #pricing li {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    clear: both;
+}
+</style>
+
+<script>
+
+// Add event listener to navigation menu
+document.querySelectorAll('nav a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Add event listener to sign-up button
+document.getElementById('sign-up-btn').addEventListener('click', () => {
+    alert('Sign up for free!');
+});
+
+// Add event listener to features section
+document.getElementById('features').addEventListener('click', () => {
+    alert('Learn more about our features!');
+});
+
+// Add event listener to pricing section
+document.getElementById('pricing').addEventListener('click', () => {
+    alert('Learn more about our pricing!');
+});
+
+// Add event listener to about section
+document.getElementById('about').addEventListener('click', () => {
+    alert('Learn more about us!');
+});
+
+
+// Add event listener to document
+document.addEventListener('scroll', () => {
+    const featuresSection = document.getElementById('features');
+    const pricingSection = document.getElementById('pricing');
+    const aboutSection = document.getElementById('about');
+
+    if (window.scrollY >= featuresSection.offsetTop - 200) {
+        featuresSection.classList.add('active');
+    } else {
+        featuresSection.classList.remove('active');
+    }
+
+    if (window.scrollY >= pricingSection.offsetTop - 200) {
+        pricingSection.classList.add('active');
+    } else {
+        pricingSection.classList.remove('active');
+    }
+
+    if (window.scrollY >= aboutSection.offsetTop - 200) {
+        aboutSection.classList.add('active');
+    } else {
+        aboutSection.classList.remove('active');
+    }
+});
+
+// Add event listener to navigation menu
+document.querySelectorAll('nav a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+        link.classList.add('active');
+        setTimeout(() => {
+            link.classList.remove('active');
+        }, 2000);
+    });
+});
+
+</script>

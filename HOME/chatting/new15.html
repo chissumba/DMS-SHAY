@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMS Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./LOGO (2).png" alt="DMS Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#visuals">Visuals</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#trust">Trust Indicators</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        <button class="sidebar-button">☰</button>
+    </header>
+    
+    <main>
+        <section id="benefits">
+            <h1>Benefits</h1>
+            <p>Discover the value our document management system offers.</p>
+            <!-- Add more content here -->
+        </section>
+
+        <section id="visuals">
+            <h1>Visuals</h1>
+            <img src="./front image.png" alt="Benefits">
+            <!-- Add more images/videos here -->
+        </section>
+
+        <section id="testimonials">
+            <h1>Testimonials</h1>
+            <div class="testimonial">
+                <p>"The best document management system I've used!"</p>
+                <span>- Happy Customer</span>
+            </div>
+            <!-- Add more testimonials here -->
+        </section>
+
+        <section id="trust">
+            <h1>Trust Indicators</h1>
+            <img src="./LOGO (2).png" alt="Security Badge">
+            <!-- Add more trust indicators here -->
+        </section>
+
+        <section id="features">
+            <h1>Features</h1>
+            <div class="feature-list">
+                <div class="feature">
+                    <h2>Document Expiration</h2>
+                    <p>Set expiration dates for sensitive documents.</p>
+                </div>
+                <!-- Add more features here -->
+            </div>
+        </section>
+
+        <section id="contact">
+            <h1>Contact Us</h1>
+            <button class="cta-button">Get Started</button>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="ratings">
+            <h2>Document Usage Ratings</h2>
+            <div class="bar-graph">
+                <!-- Bar graph data -->
+            </div>
+        </div>
+    </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #fff, #f0f0f0);
+    overflow-x: hidden;
+}
+
+header {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    background: #282c34;
+    color: #fff;
+}
+
+.logo img {
+    width: 150px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    padding: 5px;
+}
+
+nav ul li a:hover {
+    color: #ff6347;
+    text-shadow: 0 0 10px #ff6347;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.sidebar-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.cta-button {
+    background: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.cta-button:hover {
+    background: #e5534d;
+}
+
+footer {
+    background: #282c34;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.ratings {
+    display: inline-block;
+}
+
+.bar-graph {
+    background: #fff;
+    height: 30px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bar-graph::after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 70%; /* Example data */
+    background: #ff6347;
+}
+@keyframes falling {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.falling {
+    animation: falling 1s ease-out;
+}
+
+
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // Falling fonts animation
+    const fontElements = document.querySelectorAll('h1, h2, p');
+    fontElements.forEach(el => {
+        el.classList.add('falling');
+    });
+
+    // Additional JavaScript for advanced animations or interactions can be added here
+});
+
+</script>

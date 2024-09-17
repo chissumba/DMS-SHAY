@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar for Contacts -->
+        <div class="contact-list">
+            <div class="header">
+                <h2>Chats</h2>
+                <button class="new-chat-btn"><i class="fas fa-edit"></i></button>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" id="contact-search" placeholder="Search contacts">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <ul id="contacts">
+                <li class="contact">
+                    <img src="./sus.png" alt="Avatar" class="avatar">
+                    <div class="contact-info">
+                        <h3>John Doe</h3>
+                        <p>Last message</p>
+                    </div>
+                </li>
+                <li class="contact">
+                    <img src="./white front image dress.png" alt="Avatar" class="avatar">
+                    <div class="contact-info">
+                        <h3>Jane Smith</h3>
+                        <p>Last message</p>
+                    </div>
+                </li>
+                <li class="contact">
+                    <img src="./crime.png" alt="Avatar" class="avatar">
+                    <div class="contact-info">
+                        <h3>David Brown</h3>
+                        <p>Last message</p>
+                    </div>
+                </li>
+                <!-- More Contacts -->
+            </ul>
+        </div>
+
+        <!-- Chat Window -->
+        <div class="chat-window">
+            <div class="chat-header">
+                <img src="./blue front image dress.png" alt="Avatar" class="avatar">
+                <h3>John Doe</h3>
+            </div>
+            <div class="chat-messages">
+                <!-- Messages go here -->
+                <div class="message received">
+                    <p>Hello there!</p>
+                    <span class="time">10:00 AM</span>
+                </div>
+                <div class="message sent">
+                    <p>Hi! How are you?</p>
+                    <span class="time">10:02 AM</span>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message">
+                <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+    /* Search Bar Styles */
+.search-bar {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+
+.search-bar .search-btn {
+    background-color: transparent;
+    border: none;
+    margin-left: 8px;
+    cursor: pointer;
+    color: #666;
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const sendButton = document.querySelector('.send-btn');
+    const inputField = document.querySelector('.chat-input input[type="text"]');
+    const chatMessages = document.querySelector('.chat-messages');
+    const searchInput = document.getElementById('contact-search');
+    const contacts = document.querySelectorAll('.contact');
+
+    sendButton.addEventListener('click', () => {
+        const messageText = inputField.value.trim();
+        if (messageText) {
+            const newMessage = document.createElement('div');
+            newMessage.classList.add('message', 'sent');
+            newMessage.innerHTML = `<p>${messageText}</p><span class="time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>`;
+            chatMessages.appendChild(newMessage);
+            inputField.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    });
+
+    inputField.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendButton.click();
+        }
+    });
+
+    // Search functionality
+    searchInput.addEventListener('input', () => {
+        const filter = searchInput.value.toLowerCase();
+        contacts.forEach(contact => {
+            const contactName = contact.querySelector('.contact-info h3').textContent.toLowerCase();
+            if (contactName.includes(filter)) {
+                contact.style.display = '';
+            } else {
+                contact.style.display = 'none';
+            }
+        });
+    });
+
+    // Add event listeners for switching contacts
+    contacts.forEach(contact => {
+        contact.addEventListener('click', () => {
+            contacts.forEach(c => c.classList.remove('active'));
+            contact.classList.add('active');
+        });
+    });
+});
+
+</script>

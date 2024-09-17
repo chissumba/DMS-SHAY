@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMS Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header>
+        <div class="logo">
+            <img src="./LOGO (2).png" alt="DMS Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<!-- Link to your CSS file -->
+    <style>
+        /* Basic styles for the landing page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: blue;
+    color: #fff;
+    animation: fallDown 5s ease-out;
+
+}
+
+header .logo img {
+    height: 100px;
+    width: 300px;
+    animation: fallDown 5s ease-out;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    font-size: xx-large;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+nav a:hover {
+    color: #f39c12;
+}
+
+
+        /* Hero section styles */
+        .hero {
+            background: url('./blue\ front\ image\ dress.png') no-repeat center center/cover;
+            height: 80vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .btn {
+            background-color: #ff4757;
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        /* About section styles */
+        .about, .features, .testimonials, .cta, .footer {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .features .feature-item {
+            margin: 2rem 0;
+        }
+
+        .testimonials blockquote {
+            font-style: italic;
+            margin: 1rem 0;
+        }
+
+        .cta {
+            background-color: #ff4757;
+            color: #fff;
+        }
+
+        .cta .btn {
+            background-color: #fff;
+            color: #ff4757;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .footer p, .footer a {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Welcome to Our Startup</h1>
+        <p>Innovative Solutions for Your Business</p>
+        <button class="btn">Get Started</button>
+    </section>
+
+
+    <section id="features" class="features-section">
+        <div class="feature">
+            <img src="./blue front image dress.png" alt="Feature 1">
+            <h2>Secure Storage</h2>
+            <p>Keep your documents safe and secure with our state-of-the-art encryption technology.</p>
+        </div>
+        <div class="feature">
+            <img src="./front image.png" alt="Feature 2">
+            <h2>Easy Access</h2>
+            <p>Access your documents from anywhere, at any time, with just a few clicks.</p>
+        </div>
+        <div class="feature">
+            <img src="./white front image dress.png" alt="Feature 3">
+            <h2>Collaborative Tools</h2>
+            <p>Collaborate with your team in real-time, with seamless sharing and editing tools.</p>
+        </div>
+    </section>
+    
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>We are a dedicated team committed to providing you with the best document management solution. Our platform is designed to be user-friendly and secure, ensuring a hassle-free experience for all your document management needs.</p>
+    </section>
+    
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 DocuManage. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+<style>
+
+
+body {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: magenta;
+    scroll-behavior: smooth;
+    font-size: x-large;
+}
+
+
+
+.nav-links a:hover {
+    color: #ffeb3b;
+}
+
+.hero-section {
+    max-width: 800px;
+    margin-top: 50px;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #ffeb3b;
+    color: #333;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffc107;
+}
+
+.features-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    text-decoration-style: double;
+}
+
+.feature {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+    width: 250px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.feature img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.about-section, .contact-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+.contact-form button {
+    background-color: #ffeb3b;
+    color: darkgray;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: x-large;
+}
+
+.contact-form button:hover {
+    background-color: #ffc107;
+}
+
+.footer {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    font-size: x-large;
+}
+
+/* Additional styles for sticky navigation */
+.navbar.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Animation for feature sections */
+.feature {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.feature-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .features-section {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = link.getAttribute('href');
+            document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    const ctaButton = document.querySelector('.cta-button');
+    ctaButton.addEventListener('click', () => {
+        alert('Welcome to DocuManage! Let\'s get started.');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const ctaButton = document.querySelector('.cta-button');
+    const features = document.querySelectorAll('.feature');
+    const navbar = document.querySelector('.navbar');
+    const header = document.querySelector('.header');
+
+    // Smooth scrolling for navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = link.getAttribute('href');
+            document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Alert for "Get Started" button
+    ctaButton.addEventListener('click', () => {
+        alert('Welcome to DocuManage! Let\'s get started.');
+    });
+
+    // Intersection Observer for feature animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('feature-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    features.forEach(feature => {
+        observer.observe(feature);
+    });
+
+    // Sticky navigation on scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > header.offsetHeight - navbar.offsetHeight) {
+            navbar.classList.add('sticky');
+        } else {
+            navbar.classList.remove('sticky');
+        }
+    });
+});
+
+
+
+</script>
+
+</body>
+</html>

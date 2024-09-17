@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile">
+                <img src="./imagies/front image.png" alt="Profile Picture">
+                <h2>Clinton</h2>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </header>
+        <main>
+            <div class="chats">
+                <div class="chat">
+                    <div class="chat-header">
+                        <h3>Clinton</h3>
+                        <p>12:45 PM</p>
+                    </div>
+                    <div class="chat-messages">
+                        <p>Hello!</p>
+                        <p>How are you?</p>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" placeholder="Type a message...">
+                        <button><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="profile">
+                <img src="./imagies/front image.png" alt="Profile Picture">
+                <h2>Dino Chissumba</h2>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </header>
+        <main>
+            <div class="chats">
+                <div class="chat">
+                    <div class="chat-header">
+                        <h3>Dino Chissumba</h3>
+                        <p>12:00 PM</p>
+                    </div>
+                    <div class="chat-messages">
+                        <p>Hello!</p>
+                        <p>Please fix my car</p>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" placeholder="Type a message...">
+                        <button><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: blue;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: purple;
+    border: 1px solid red;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid deeppink;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+}
+
+.search button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.chats {
+    padding: 20px;
+}
+
+.chat {
+    margin-bottom: 20px;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid deepskyblue;
+}
+
+.chat-messages {
+    padding: 20px;
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid magenta;
+}
+
+.chat-input input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.chat-input button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+</style>
+
+<script>
+
+// Add event listeners for chat input and send button
+document.querySelector('.chat-input input').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
+
+document.querySelector('.chat-input button').addEventListener('click', sendMessage);
+
+function sendMessage() {
+    const messageInput = document.querySelector('.chat-input input');
+    const message = messageInput.value.trim();
+    if (message) {
+        // Add message to chat messages container
+        const chatMessages = document.querySelector('.chat-messages');
+        const newMessage = document.createElement('p');
+        newMessage.textContent = message;
+        chatMessages.appendChild(newMessage);
+        // Clear input field
+        messageInput.value = '';
+    }
+}
+
+
+// Add event listener for search input
+document.querySelector('.search input').addEventListener('input', (e) => {
+    const searchQuery = e.target.value.toLowerCase();
+    const chatList = document.querySelector('.chats');
+    const chats = chatList.children;
+    for (const chat of chats) {
+        const chatName = chat.querySelector('.chat-header h3').textContent.toLowerCase();
+        if (chatName.includes(searchQuery)) {
+            chat.style.display = 'block';
+        } else {
+            chat.style.display = 'none';
+        }
+    }
+});
+
+// Add event listener for chat header (to toggle chat messages)
+document.querySelectorAll('.chat-header').forEach((header) => {
+    header.addEventListener('click', () => {
+        const chat = header.parentNode;
+        const chatMessages = chat.querySelector('.chat-messages');
+        if (chatMessages.style.display === 'none') {
+            chatMessages.style.display = 'block';
+        } else {
+            chatMessages.style.display = 'none';
+        }
+    });
+});
+
+// Add event listener for chat input (to toggle send button)
+document.querySelector('.chat-input input').addEventListener('input', (e) => {
+    const sendButton = document.querySelector('.chat-input button');
+    if (e.target.value.trim() !== '') {
+        sendButton.style.opacity = 1;
+        sendButton.style.pointerEvents = 'auto';
+    } else {
+        sendButton.style.opacity = 0.5;
+        sendButton.style.pointerEvents = 'none';
+    }
+});
+
+
+// Add event listener for send button (to send message)
+document.querySelector('.chat-input button').addEventListener('click', () => {
+    const messageInput = document.querySelector('.chat-input input');
+    const message = messageInput.value.trim();
+    if (message) {
+        // Create a new message element
+        const newMessage = document.createElement('div');
+        newMessage.className = 'message';
+        newMessage.textContent = message;
+        // Add message to chat messages container
+        const chatMessages = document.querySelector('.chat-messages');
+        chatMessages.appendChild(newMessage);
+        // Clear input field
+        messageInput.value = '';
+        // Scroll to bottom of chat messages container
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+});
+
+// Add event listener for chat messages container (to scroll to bottom on new message)
+document.querySelector('.chat-messages').addEventListener('DOMNodeInserted', () => {
+    const chatMessages = document.querySelector('.chat-messages');
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+});
+
+// Add dummy chat data (replace with real data from API or database)
+const chatData = [
+    { name: 'John Doe', message: 'Hello!' },
+    { name: 'Jane Doe', message: 'Hi!' },
+    { name: 'John Doe', message: 'How are you?' },
+    { name: 'Jane Doe', message: 'I\'m good, thanks!' },
+];
+
+// Populate chat messages container with dummy data
+chatData.forEach((chat) => {
+    const newMessage = document.createElement('div');
+    newMessage.className = 'message';
+    newMessage.textContent = `${chat.name}: ${chat.message}`;
+    document.querySelector('.chat-messages').appendChild(newMessage);
+});
+
+</Script>
+

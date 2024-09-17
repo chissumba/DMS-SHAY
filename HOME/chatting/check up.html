@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./abouttt.html">About</a></li>
+                <li><a href="./Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="checkup-section">
+            <h1>Check-up</h1>
+            <p>Enter your details to check your document status:</p>
+            <form>
+                <label for="document-id">Document ID:</label>
+                <input type="text" id="document-id" name="document-id">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <button type="submit">Check Status</button>
+            </form>
+            <div id="status"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 ECHO FLUX. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: blue;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.checkup-section {
+    padding: 2em;
+}
+
+.checkup-section form {
+    margin-top: 20px;
+}
+
+.checkup-section label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.checkup-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.checkup-section button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#status {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.footer {
+            background-color: black;
+            color: #fff;
+        }
+
+        .footer p, .footer a {
+            color: #fff;
+        }
+
+        .loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+<script>
+
+// Check document status
+document.querySelector('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const documentId = document.getElementById('document-id').value;
+    const email = document.getElementById('email').value;
+    // Call API or perform check-up logic here
+    const status = 'Document status: Pending'; // Replace with actual status
+    document.getElementById('status').innerHTML = status;
+});
+
+// Check document status
+document.querySelector('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const documentId = document.getElementById('document-id').value;
+    const email = document.getElementById('email').value;
+    // Call API or perform check-up logic here
+    const status = 'Document status: Pending'; // Replace with actual status
+    document.getElementById('status').innerHTML = status;
+    // Add loading animation
+    document.getElementById('status').innerHTML += '<div class="loader"></div>';
+    // Simulate API call with setTimeout
+    setTimeout(() => {
+        document.getElementById('status').innerHTML = 'Document status: Approved';
+        // Remove loading animation
+        document.querySelector('.loader').remove();
+    }, 2000);
+});
+
+
+
+</script>
+
+
+
+
+
+

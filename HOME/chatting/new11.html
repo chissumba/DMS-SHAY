@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMS Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header>
+        <div class="logo">
+            <img src="./LOGO (2).png" alt="DMS Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./khanda.html">Home</a></li>
+                <li><a href="./new11.html">Service</a></li>
+                <li><a href="./about d.html">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="./why choose us.html">Why Choose Us</a></li>
+                <li><a href="./comment 2.html">Comment</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Sidebar Button -->
+    <button class="sidebar-btn">☰</button>
+
+    <!-- Main Section -->
+    <main>
+        <!-- Search Bar -->
+        <section class="search-bar">
+            <input type="text" placeholder="Search Documents...">
+        </section>
+
+        <!-- Information Section -->
+        <section class="info">
+            <h1>Welcome to Your Document Management System</h1>
+            <p>Organize, manage, and secure your documents with ease. Explore our features and see how we can help streamline your workflow.</p>
+            <a href="./sign in.html" class="cta-button">Get Started</a>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="benefits">
+            <h2>Benefits</h2>
+            <p>Our system offers a range of benefits:</p>
+            <ul>
+                <li>Secure Document Storage</li>
+                <li>Easy Document Management</li>
+                <li>Customizable Folders</li>
+                <li>Document Tagging and Search</li>
+                <!-- Add more benefits here -->
+            </ul>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <h2>Features</h2>
+            <div class="feature-list">
+                <!-- Add feature icons and descriptions -->
+                <div class="feature">
+                    <img src="./front image.png" alt="Feature 1">
+                    <p>Document Expiration</p>
+                </div>
+                <div class="feature">
+                    <img src="./white front image dress.png" alt="Feature 2">
+                    <p>Drag-and-Drop Upload</p>
+                </div>
+                <!-- Add more features here -->
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial">
+                <p>"This system has transformed the way we handle documents. Highly recommended!"</p>
+                <span>- Satisfied Customer</span>
+            </div>
+            <!-- Add more testimonials here -->
+        </section>
+
+        <!-- Trust Indicators Section -->
+        <section class="trust-indicators">
+            <h2>Trusted and Secure</h2>
+            <div class="security-badges">
+                <img src="./LOGO (2).png" alt="Badge 1">
+                <img src="./sus.png" alt="Badge 2">
+                <!-- Add more badges here -->
+            </div>
+        </section>
+
+        <!-- Rating and Usage Statistics -->
+        <section class="rating">
+            <h2>Document Usage</h2>
+            <div class="rating-bar">
+                <div class="bar">
+                    <div class="progress" style="width: 60%"></div>
+                </div>
+                <p>Most Used Document Type: PDFs</p>
+            </div>
+            <!-- Add more bar graphs here -->
+        </section>
+
+        <!-- Help and Support Section -->
+        <section class="support">
+            <h2>Help and Support</h2>
+            <p>Need assistance? Check our FAQs or contact our support team.</p>
+            <a href="#faq" class="cta-btn">Visit FAQs</a>
+            <!-- Add more support options here -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Document Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<style>
+    /* Basic reset and layout */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    font-size: x-large;
+    background-image: url(./blue\ front\ image\ dress.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: blue;
+    color: #fff;
+    animation: fallDown 5s ease-out;
+
+}
+
+header .logo img {
+    height: 100px;
+    width: 300px;
+    animation: fallDown 5s ease-out;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    font-size: xx-large;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+nav a:hover {
+    color: #f39c12;
+}
+
+.sidebar-btn {
+    display: none; /* Hide sidebar button initially */
+}
+
+main {
+    padding: 2rem;
+}
+
+.search-bar {
+    margin-bottom: 1.5rem;
+    animation: fallDown 5s ease-out;
+
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.info h1 {
+    font-size: 2.5rem;
+    animation: fallDown 5s ease-out;
+}
+
+.info p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    animation: fallDown 2s ease-out;
+}
+
+.cta-btn:hover {
+    background: purple;
+}
+
+.benefits, .features, .testimonials, .trust-indicators, .rating, .support {
+    margin-bottom: 2rem;
+}
+
+.benefits ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.features .feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    animation: fallDown 5s ease-out;
+
+}
+
+.features img {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+}
+
+.testimonials {
+    background: #f4f4f4;
+    padding: 1rem;
+    animation: fallDown 5s ease-out;
+    
+}
+
+.trust-indicators {
+    display: flex;
+    gap: 1rem;
+}
+
+.trust-indicators img {
+    height: 40px;
+}
+
+.rating-bar {
+    margin-top: 1rem;
+    
+}
+
+.rating-bar .bar {
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+    width: 100%;
+    
+}
+
+.rating-bar .progress {
+    background: #f39c12;
+    height: 100%;
+    transition: width 0.3s;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+/* Animations */
+@keyframes fallDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+nav ul li a {
+    text-shadow: 0 0 5px #f39c12;
+}
+
+</style>
+<script>
+    // Animation for fonts falling down
+document.addEventListener("DOMContentLoaded", () => {
+    const fonts = document.querySelectorAll('.info h1, .info p');
+    fonts.forEach(font => {
+        font.style.animation = 'fallDown 1s ease-out';
+    });
+});
+
+// Sidebar button functionality (toggle display)
+const sidebarBtn = document.querySelector('.sidebar-btn');
+sidebarBtn.addEventListener('click', () => {
+    // Implement sidebar toggle logic here
+});
+
+</script>

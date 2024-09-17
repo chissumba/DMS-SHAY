@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">DocuManage</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#upload">Upload</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero-section">
+            <h1>Organize Your Documents<br> Seamlessly</h1>
+            <p>Experience a new way of managing your documents efficiently and securely.</p>
+            <button class="cta-button">Get Started</button>
+        </div>
+    </header>
+    
+    <section id="features" class="features-section">
+        <div class="feature">
+            <img src="https://via.placeholder.com/150" alt="Feature 1">
+            <h2>Secure Storage</h2>
+            <p>Keep your documents safe and secure with our state-of-the-art encryption technology.</p>
+        </div>
+        <div class="feature">
+            <img src="https://via.placeholder.com/150" alt="Feature 2">
+            <h2>Easy Access</h2>
+            <p>Access your documents from anywhere, at any time, with just a few clicks.</p>
+        </div>
+        <div class="feature">
+            <img src="https://via.placeholder.com/150" alt="Feature 3">
+            <h2>Collaborative Tools</h2>
+            <p>Collaborate with your team in real-time, with seamless sharing and editing tools.</p>
+        </div>
+    </section>
+    
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>We are a dedicated team committed to providing you with the best document management solution. Our platform is designed to be user-friendly and secure, ensuring a hassle-free experience for all your document management needs.</p>
+    </section>
+    
+    <section id="upload" class="upload-section">
+        <h2>Upload Your Documents</h2>
+        <p>Drag and drop your files here or click below to select files from your device.</p>
+        <input type="file" id="fileInput" multiple>
+        <div id="fileList"></div>
+    </section>
+    
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 DocuManage. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+<style>
+    /* Upload Section Styles */
+.upload-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.upload-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.upload-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.upload-section input[type="file"] {
+    display: none;
+}
+
+.upload-section label {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ffeb3b;
+    color: #333;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-section label:hover {
+    background-color: #ffc107;
+}
+
+#fileList {
+    margin-top: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#fileList ul {
+    list-style: none;
+}
+
+#fileList li {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const ctaButton = document.querySelector('.cta-button');
+    const features = document.querySelectorAll('.feature');
+    const navbar = document.querySelector('.navbar');
+    const header = document.querySelector('.header');
+    const fileInput = document.getElementById('fileInput');
+    const fileList = document.getElementById('fileList');
+
+    // Smooth scrolling for navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = link.getAttribute('href');
+            document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Alert for "Get Started" button
+    ctaButton.addEventListener('click', () => {
+        alert('Welcome to DocuManage! Let\'s get started.');
+    });
+
+    // Intersection Observer for feature animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('feature-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    features.forEach(feature => {
+        observer.observe(feature);
+    });
+
+    // Sticky navigation on scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > header.offsetHeight - navbar.offsetHeight) {
+            navbar.classList.add('sticky');
+        } else {
+            navbar.classList.remove('sticky');
+        }
+    });
+
+    // File upload handling
+    fileInput.addEventListener('change', () => {
+        const files = fileInput.files;
+        fileList.innerHTML = '';
+        if (files.length > 0) {
+            const ul = document.createElement('ul');
+            Array.from(files).forEach(file => {
+                const li = document.createElement('li');
+                li.textContent = file.name;
+                ul.appendChild(li);
+            });
+            fileList.appendChild(ul);
+        } else {
+            fileList.innerHTML = '<p>No files selected.</p>';
+        }
+    });
+
+    // Optional: Drag-and-drop support
+    const uploadSection = document.querySelector('.upload-section');
+    uploadSection.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        uploadSection.classList.add('dragover');
+    });
+
+    uploadSection.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        uploadSection.classList.remove('dragover');
+    });
+
+    uploadSection.addEventListener('drop', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        uploadSection.classList.remove('dragover');
+        const files = e.dataTransfer.files;
+        fileInput.files = files;
+        fileInput.dispatchEvent(new Event('change'));
+    });
+});
+
+</script>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./LOGO (2).png" />
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar for Contacts -->
+        <div class="contact-list">
+            <div class="header">
+                <h2>Chats</h2>
+                <button class="new-chat-btn"><i class="fas fa-edit"></i></button>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" id="contact-search" placeholder="Search contacts">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <ul id="contacts">
+                <li class="contact">
+                    <img src="./front image.png" alt="Avatar" class="avatar">
+                    <div class="contact-info">
+                        <h3>John Doe</h3>
+                        <p>Last message</p>
+                    </div>
+                </li>
+                <li class="contact">
+                    <img src="./crime.png" alt="Avatar" class="avatar">
+                    <div class="contact-info">
+                        <h3>Jane Smith</h3>
+                        <p>Last message</p>
+                    </div>
+                </li>
+                <li class="contact">
+                    <img src="./sus.png" alt="Avatar" class="avatar">
+                    <div class="contact-info">
+                        <h3>David Brown</h3>
+                        <p>Last message</p>
+                    </div>
+                </li>
+                <!-- More Contacts -->
+            </ul>
+        </div>
+
+        <!-- Chat Window -->
+        <div class="chat-window">
+            <div class="chat-header">
+                <img src="./blue front image dress.png" alt="Avatar" class="avatar">
+                <h3>John Doe</h3>
+                <!-- Call Button -->
+                <button class="call-btn"><i class="fas fa-phone"></i></button>
+            </div>
+            <div class="chat-messages">
+                <!-- Messages go here -->
+                <div class="message received">
+                    <p>Hello there!</p>
+                    <span class="time">10:00 AM</span>
+                </div>
+                <div class="message sent">
+                    <p>Hi! How are you?</p>
+                    <span class="time">10:02 AM</span>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message">
+                <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call Modal -->
+    <div id="call-modal" class="call-modal">
+        <div class="call-modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Calling John Doe...</h2>
+            <p>The call is in progress. Please wait...</p>
+            <button class="end-call-btn">End Call</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+    /* Call Button in Chat Header */
+.call-btn {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+/* Call Modal Styles */
+.call-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.call-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.end-call-btn {
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const sendButton = document.querySelector('.send-btn');
+    const inputField = document.querySelector('.chat-input input[type="text"]');
+    const chatMessages = document.querySelector('.chat-messages');
+    const searchInput = document.getElementById('contact-search');
+    const contacts = document.querySelectorAll('.contact');
+    const callButton = document.querySelector('.call-btn');
+    const callModal = document.getElementById('call-modal');
+    const closeModalBtn = document.querySelector('.close-btn');
+    const endCallButton = document.querySelector('.end-call-btn');
+
+    sendButton.addEventListener('click', () => {
+        const messageText = inputField.value.trim();
+        if (messageText) {
+            const newMessage = document.createElement('div');
+            newMessage.classList.add('message', 'sent');
+            newMessage.innerHTML = `<p>${messageText}</p><span class="time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>`;
+            chatMessages.appendChild(newMessage);
+            inputField.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    });
+
+    inputField.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendButton.click();
+        }
+    });
+
+    // Search functionality
+    searchInput.addEventListener('input', () => {
+        const filter = searchInput.value.toLowerCase();
+        contacts.forEach(contact => {
+            const contactName = contact.querySelector('.contact-info h3').textContent.toLowerCase();
+            if (contactName.includes(filter)) {
+                contact.style.display = '';
+            } else {
+                contact.style.display = 'none';
+            }
+        });
+    });
+
+    // Add event listeners for switching contacts
+    contacts.forEach(contact => {
+        contact.addEventListener('click', () => {
+            contacts.forEach(c => c.classList.remove('active'));
+            contact.classList.add('active');
+        });
+    });
+
+    // Open Call Modal
+    callButton.addEventListener('click', () => {
+        callModal.style.display = 'block';
+    });
+
+    // Close Call Modal
+    closeModalBtn.addEventListener('click', () => {
+        callModal.style.display = 'none';
+    });
+
+    // End Call Button
+    endCallButton.addEventListener('click', () => {
+        callModal.style.display = 'none';
+    });
+
+    // Close the modal when clicking outside of the modal content
+    window.addEventListener('click', (event) => {
+        if (event.target == callModal) {
+            callModal.style.display = 'none';
+        }
+    });
+});
+
+</script>

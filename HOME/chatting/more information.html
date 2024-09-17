@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>About Us</title>
+          <link rel="stylesheet" href="styles.css">
+      </head>
+      <body style="background-color: skyblue;">
+          <header>
+              <style>
+
+              .body{
+                background-color: skyblue;
+
+              }
+
+              .container {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0;
+              text-decoration: none;
+          }
+          
+          .logo img {
+              height: 100px;
+              width: 300px;
+          }
+          nav ul {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              display: flex;
+              font-size: xx-large;
+          }
+          
+          nav ul li {
+              margin-left: 0px;
+          }
+          
+          nav ul li a {
+              color: white;
+              text-decoration: none;
+              padding: 5px 10px;
+              font-size: xx-large;
+          }
+          
+          nav ul li a:hover {
+              background-color: purple;
+              border-radius: 5px;
+          }    
+          </style>
+              <div class="container">
+                  <div class="logo">
+                      <img src="./imagies/ECHO FLUX.png" alt="Logo">
+                  </div>
+                  <nav>
+                      <ul>
+                          <li><a href="./index.html">Home</a></li>
+                          <li><a href="./about.html">About</a></li>
+                          <li><a href="service.html">Services</a></li>
+                          <li><a href="./Contact.html">Contact</a></li>
+                          <li><a href="login.html">Login</a></li>
+                      </ul>
+                  </nav>
+              </div>
+          </header>
+    <main>
+        <section class="more-info-section">
+            <h1>What is a Document Management System?</h1>
+            <p>A document management system (DMS) is a software solution that enables organizations to store, manage, and track electronic documents and images.</p>
+            <h2>Types of Documents</h2>
+            <ul>
+                <li>Text documents</li>
+                <li>Images</li>
+                <li>Videos</li>
+                <li>Audio files</li>
+            </ul>
+            <h2>Why is it Important?</h2>
+            <p>A DMS helps organizations to reduce paper clutter, improve document security, and increase productivity.</p>
+            <h2>Benefits of a Document Management System</h2>
+            <ul>
+                <li>Improved document security</li>
+                <li>Increased productivity</li>
+                <li>Reduced paper clutter</li>
+                <li>Easy document sharing and collaboration</li>
+            </ul>
+            <h2>More Information</h2>
+            <p>Our document management system is designed to meet the needs of organizations of all sizes. Contact us to learn more.</p>
+        </section>
+    </main>
+
+    <section class="more-info-section">
+        <h2>How Our Document Management System Works</h2>
+        <p>Our system is designed to be user-friendly and efficient.</p>
+        <ol>
+            <li>Upload your documents to our secure server</li>
+            <li>Organize your documents using our intuitive folder system</li>
+            <li>Share documents with colleagues or clients using our secure sharing feature</li>
+            <li>Track changes and revisions to your documents using our version control feature</li>
+        </ol>
+        <h2>Security and Compliance</h2>
+        <p>We take security and compliance seriously.</p>
+        <ul>
+            <li>Our system is compliant with industry regulations</li>
+            <li>We use encryption to protect your documents</li>
+            <li>Our system is regularly backed up to prevent data loss</li>
+        </ul>
+        <h2>Benefits of Our Document Management System</h2>
+        <p>Our system can help you:</p>
+        <ul>
+            <li>Reduce paper clutter and increase productivity</li>
+            <li>Improve document security and compliance</li>
+            <li>Enhance collaboration and communication</li>
+            <li>Save time and money</li>
+        </ul>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2023 ECHO FLUX. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+<style>
+
+.more-info-section {
+    padding: 2em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.more-info-section h1 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.more-info-section h2 {
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.more-info-section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.more-info-section li {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+.more-info-section.scrolled {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.more-info-section ol {
+    list-style: decimal;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.more-info-section ol li {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.more-info-section ul {
+    list-style: disc;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.more-info-section ul li {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+</style>
+
+<script>
+    
+
+// Add animation to more information section
+document.addEventListener('DOMContentLoaded', () => {
+    const moreInfoSection = document.querySelector('.more-info-section');
+    moreInfoSection.addEventListener('scroll', () => {
+        const scrollPosition = moreInfoSection.scrollTop;
+        if (scrollPosition > 200) {
+            moreInfoSection.classList.add('scrolled');
+        } else {
+            moreInfoSection.classList.remove('scrolled');
+        }
+    });
+});
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

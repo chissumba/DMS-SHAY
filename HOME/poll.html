@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Poll Game</h1>
+    </header>
+    <main>
+        <section class="poll-section">
+            <h2>What is your favorite color?</h2>
+            <ul>
+                <li><input type="radio" id="color-red" name="color"><label for="color-red">Red</label></li>
+                <li><input type="radio" id="color-blue" name="color"><label for="color-blue">Blue</label></li>
+                <li><input type="radio" id="color-green" name="color"><label for="color-green">Green</label></li>
+            </ul>
+            <button class="vote-button">Vote</button>
+        </section>
+        <section class="results-section">
+            <h2>Results</h2>
+            <ul>
+                <li>Red: <span class="result-red">0</span> votes</li>
+                <li>Blue: <span class="result-blue">0</span> votes</li>
+                <li>Green: <span class="result-green">0</span> votes</li>
+            </ul>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<style>
+
+.poll-section {
+    padding: 2em;
+    text-align: center;
+}
+
+.poll-section h2 {
+    margin-bottom: 10px;
+}
+
+.poll-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.poll-section li {
+    margin-bottom: 10px;
+}
+
+.vote-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.vote-button:hover {
+    background-color: #3e8e41;
+}
+
+.results-section {
+    padding: 2em;
+    text-align: center;
+}
+
+.results-section h2 {
+    margin-bottom: 10px;
+}
+
+.results-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.results-section li {
+    margin-bottom: 10px;
+}
+
+.result-red, .result-blue, .result-green {
+    font-weight: bold;
+    font-size: 24px;
+}
+</style>
+
+<script>
+let votesRed = 0;
+let votesBlue = 0;
+let votesGreen = 0;
+
+document.querySelector('.vote-button').addEventListener('click', () => {
+    const color = document.querySelector('input[type="radio"]:checked').id;
+    
+    if (color === 'color-red') {
+        votesRed++;
+    } else if (color === 'color-blue') {
+        votesBlue++;
+    } else if (color === 'color-green') {
+        votesGreen++;
+    }
+    
+    document.querySelector('.result-red').textContent = votesRed;
+    document.querySelector('.result-blue').textContent = votesBlue;
+    document.querySelector('.result-green').textContent = votesGreen;
+});
+
+</script>
+
+
+
+
+

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <body style="background-color: skyblue;">
+        <header>
+            <style>
+
+            .body{
+              background-color: skyblue;
+
+            }
+
+            .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 100px;
+            width: 300px;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            font-size: xxx-large;
+        }
+        
+        nav ul li {
+            margin-left: 0px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            font-size: xx-large;
+        }
+        
+        nav ul li a:hover {
+            background-color: purple;
+            border-radius: 5px;
+        }  
+        
+        /* CTA Button */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    animation: bounce 2s infinite;
+}
+
+
+        </style>
+            <div class="container">
+                <div class="logo">
+                    <img src="./LOGO (2).png" alt="Logo">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="./khanda.html">Home</a></li>
+                        <li><a href="./about d.html">About</a></li>
+                        <li><a href="./new11.html">Services</a></li>
+                        <li><a href="./Contact.html">Contact</a></li>
+                        <li><a href="./sign in.html">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+          </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="signup-container">
+            <div class="signup-image">
+                <img src="./white front image dress.png" alt="Sign Up">
+            </div>
+            <div class="signup-form">
+                <h1>Create Your Account</h1>
+                <form id="signup-form">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+                    <button type="submit" class="cta-btn">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="./sign in.html">Login here</a>.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Document Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+<style>
+    /* Basic reset and layout */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: blue;
+}
+
+header {
+    background: wheat;
+    color: rgb(238, 0, 255);
+    padding: 1rem;
+    text-align: center;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: blue;
+    padding: 1rem;
+}
+
+.signup-container {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.signup-image {
+    flex: 1;
+}
+
+.signup-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.signup-form {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup-form h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.signup-form label {
+    font-weight: bold;
+}
+
+.signup-form input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.signup-form button {
+    background: #f39c12;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.signup-form button:hover {
+    background: #e67e22;
+}
+
+.signup-form p {
+    margin-top: 1rem;
+}
+
+.signup-form a {
+    color: #f39c12;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-form a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+</style>
+<script>
+    document.getElementById('signup-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    // Implement sign-up logic here
+    alert('Sign-up successful!');
+});
+
+</script>

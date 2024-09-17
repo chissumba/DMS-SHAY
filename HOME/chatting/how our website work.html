@@ -1,0 +1,177 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>upload-documents-form</title>
+          <link rel="stylesheet" href="styles.css">
+      </head>
+      <body style="background-color: lightpink;">
+          <header>
+              <style>
+
+              .body{
+                background-color: skyblue;
+
+              }
+
+              .container {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0;
+              text-decoration: none;
+          }
+          
+          .logo img {
+              height: 100px;
+              width: 300px;
+          }
+          nav ul {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              display: flex;
+              font-size: xx-large;
+          }
+          
+          nav ul li {
+              margin-left: 0px;
+          }
+          
+          nav ul li a {
+              color: white;
+              text-decoration: none;
+              padding: 5px 10px;
+              font-size: xx-large;
+          }
+          
+          nav ul li a:hover {
+              background-color: purple;
+              border-radius: 5px;
+          }    
+          </style>
+              <div class="container">
+                  <div class="logo">
+                      <img src="./LOGO (2).png" alt="Logo">
+                  </div>
+                  <nav>
+                      <ul>
+                          <li><a href="./khanda.html">Home</a></li>
+                          <li><a href="./about d.html">About</a></li>
+                          <li><a href="./new11.html">Services</a></li>
+                          <li><a href="./Contact.html">Contact</a></li>
+                          <li><a href="login.html">Login</a></li>
+                      </ul>
+                  </nav>
+              </div>
+          </header> 
+    <main>
+        <section class="how-it-works-section">
+            <h1>How it Works</h1>
+            <p>Our document management system is designed to make it easy to store, manage, and share your documents. Here's how it works:</p>
+            <ol>
+                <li>
+                    <h2>Upload Your Documents</h2>
+                    <p>Simply click the "Upload" button to upload your documents to our secure server.</p>
+                    <img src="./blue front image dress.png" alt="Upload Documents">
+                </li>
+                <li>
+                    <h2>Organize Your Documents</h2>
+                    <p>Use our intuitive folder system to organize your documents by category, date, or any other way you like.</p>
+                    <img src="./front image.png" alt="Organize Documents">
+                </li>
+                <li>
+                    <h2>Share Your Documents</h2>
+                    <p>Share your documents with others by sending them a secure link or by setting up a shared folder.</p>
+                    <img src="./sus.png" alt="Share Documents">
+                </li>
+                <li>
+                    <h2>Access Your Documents Anywhere</h2>
+                    <p>Access your documents from anywhere, at any time, using our web-based interface or mobile app.</p>
+                    <img src="./white front image dress.png" alt="Access Documents">
+                </li>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 [Company Name]. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+<style>
+
+.how-it-works-section {
+    padding: 2em;
+    text-align: center;
+}
+
+.how-it-works-section h1 {
+    margin-bottom: 10px;
+}
+
+.how-it-works-section p {
+    margin-bottom: 20px;
+}
+
+.how-it-works-section ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.how-it-works-section li {
+    margin-bottom: 20px;
+}
+
+.how-it-works-section h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.how-it-works-section img {
+    width: 60%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+</style>
+
+<script>
+
+// Add interactive elements to the page
+document.querySelector('.how-it-works-section ol').addEventListener('click', (e) => {
+    if (e.target.tagName === 'LI') {
+        const currentLi = e.target;
+        const currentIndex = Array.prototype.indexOf.call(currentLi.parentNode.children, currentLi);
+        const nextLi = currentLi.parentNode.children[currentIndex + 1];
+        
+        if (nextLi) {
+            nextLi.classList.add('active');
+            currentLi.classList.remove('active');
+        }
+    }
+});
+
+// Add animation to the page
+document.querySelector('.how-it-works-section').addEventListener('scroll', (e) => {
+    const scrollPosition = e.target.scrollTop;
+    const sections = e.target.querySelectorAll('section');
+    
+    sections.forEach((section, index) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            section.classList.add('active');
+        } else {
+            section.classList.remove('active');
+        }
+    });
+});
+
+</script>

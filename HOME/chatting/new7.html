@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="bounce-text">Welcome to DocuManage</h1>
+            <p class="bounce-text">Organize Your Documents Efficiently and Securely</p>
+            <a href="#upload" class="cta-button">Upload Your Documents</a>
+        </div>
+    </header>
+
+    <section id="features" class="features-section">
+        <h2>Features</h2>
+        <div class="feature">
+            <h3>Secure Storage</h3>
+            <p>Keep your documents safe with advanced encryption.</p>
+        </div>
+        <div class="feature">
+            <h3>Easy Access</h3>
+            <p>Access your files from anywhere, at any time.</p>
+        </div>
+        <div class="feature">
+            <h3>Collaborative Tools</h3>
+            <p>Work with your team in real-time.</p>
+        </div>
+    </section>
+
+    <section id="upload" class="upload-section">
+        <h2>Upload Your Documents</h2>
+        <p>Drag and drop your files here or click below to select files from your device.</p>
+        <input type="file" id="fileInput" multiple>
+        <div id="fileList"></div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 DocuManage. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+<style>
+   /* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #4a90e2, #50e3c2);
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.header-content {
+    max-width: 800px;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #ffeb3b;
+    color: #333;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffc107;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0% { transform: translateY(-100px); opacity: 0; }
+    50% { transform: translateY(20px); opacity: 1; }
+    100% { transform: translateY(0); }
+}
+
+.bounce-text {
+    animation: bounce 1s ease-out;
+}
+
+/* Features section styles */
+.features-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.feature {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 300px;
+    text-align: left;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 1rem;
+}
+
+/* Upload section styles */
+.upload-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.upload-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.upload-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.upload-section input[type="file"] {
+    display: none;
+}
+
+.upload-section label {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ffeb3b;
+    color: #333;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-section label:hover {
+    background-color: #ffc107;
+}
+
+#fileList {
+    margin-top: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#fileList ul {
+    list-style: none;
+}
+
+#fileList li {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Footer styles */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+ 
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const fileInput = document.getElementById('fileInput');
+    const fileList = document.getElementById('fileList');
+
+    // File upload handling
+    fileInput.addEventListener('change', () => {
+        const files = fileInput.files;
+        fileList.innerHTML = '';
+        if (files.length > 0) {
+            const ul = document.createElement('ul');
+            Array.from(files).forEach(file => {
+                const li = document.createElement('li');
+                li.textContent = file.name;
+                ul.appendChild(li);
+            });
+            fileList.appendChild(ul);
+        } else {
+            fileList.innerHTML = '<p>No files selected.</p>';
+        }
+    });
+
+    // Optional: Drag-and-drop support
+    const uploadSection = document.querySelector('.upload-section');
+    uploadSection.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        uploadSection.classList.add('dragover');
+    });
+
+    uploadSection.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        uploadSection.classList.remove('dragover');
+    });
+
+    uploadSection.addEventListener('drop', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        uploadSection.classList.remove('dragover');
+        const files = e.dataTransfer.files;
+        fileInput.files = files;
+        fileInput.dispatchEvent(new Event('change'));
+    });
+});
+
+</script>

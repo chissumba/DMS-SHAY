@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>About Us</title>
+          <link rel="stylesheet" href="styles.css">
+      </head>
+      <body style="background-color: lightcyan;">
+          <header>
+              <style>
+
+              .body{
+                background-color: blue;
+
+              }
+
+              .container {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0;
+          }
+          
+          .logo img {
+              height: 100px;
+              width: 300px;
+          }
+          nav ul {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              display: flex;
+              font-size: xx-large;
+          }
+          
+          nav ul li {
+              margin-left: 0px;
+          }
+          
+          nav ul li a {
+              color: blue;
+              text-decoration: none;
+              padding: 5px 10px;
+              font-size: xx-large;
+          }
+          
+          nav ul li a:hover {
+              background-color: purple;
+              border-radius: 5px;
+          }    
+          </style>
+              <div class="container">
+                  <div class="logo">
+                      <img src="./imagies/ECHO FLUX.png" alt="Logo">
+                  </div>
+                  <nav>
+                      <ul>
+                          <li><a href="./index.html">Home</a></li>
+                          <li><a href="./about.html">About</a></li>
+                          <li><a href="service.html">Services</a></li>
+                          <li><a href="./Contact.html">Contact</a></li>
+                          <li><a href="login.html">Login</a></li>
+                      </ul>
+                  </nav>
+              </div>
+          </header>
+    <main>
+        <section class="login-section">
+            <h1>Login to Your Account</h1>
+            <p>Access your documents securely</p>
+            <div class="social-logins">
+                <button class="google-login">
+                    <img src="google-icon.png" alt="Google Icon">
+                    Sign in with Google
+                </button>
+                <button class="facebook-login">
+                    <img src="facebook-icon.png" alt="Facebook Icon">
+                    Sign in with Facebook
+                </button>
+                <button class="github-login">
+                    <img src="github-icon.png" alt="GitHub Icon">
+                    Sign in with GitHub
+                </button>
+            </div>
+            <p>or</p>
+            <form class="email-login">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>Login</button>
+            </form>
+            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 [Company Name]. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+<style>
+
+.login-section {
+    padding: 2em;
+    text-align: center;
+}
+
+.social-logins {
+    margin-bottom: 20px;
+}
+
+.social-logins button {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.google-login {
+    background-color: #4285F4;
+    color: #fff;
+}
+
+.facebook-login {
+    background-color: #4267B2;
+    color: #fff;
+}
+
+.github-login {
+    background-color: #333;
+    color: #fff;
+}
+
+.email-login input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.email-login button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
+
+<script>
+    
+// Add event listeners to social login buttons
+document.querySelector('.google-login').addEventListener('click', () => {
+    // Handle Google login
+    console.log('Google login clicked');
+});
+
+document.querySelector('.facebook-login').addEventListener('click', () => {
+    // Handle Facebook login
+    console.log('Facebook login clicked');
+});
+
+document.querySelector('.github-login').addEventListener('click', () => {
+    // Handle GitHub login
+    console.log('GitHub login clicked');
+});
+
+// Add event listener to email login form
+document.querySelector('.email-login').addEventListener('submit', (e) => {
+    e.preventDefault();
+    // Handle email login
+    console.log('Email login submitted');
+});
+
+
+// Handle Google login
+function handleGoogleLogin() {
+    // Redirect to Google authorization URL
+    window.location.href = '(link unavailable) email';
+}
+
+// Handle Facebook login
+function handleFacebookLogin() {
+    // Redirect to Facebook authorization URL
+    window.location.href = '(link unavailable) email';
+}
+
+// Handle GitHub login
+function handleGitHubLogin() {
+    // Redirect to GitHub authorization URL
+    window.location.href = '(link unavailable)';
+}
+
+// Handle email login
+function handleEmailLogin() {
+    // Get user input
+    const email = document.querySelector('.email-login input[type="email"]').value;
+    const password = document.querySelector('.email-login input[type="password"]').value;
+    
+    // Validate user input
+    if (!email || !password) {
+        alert('Please enter both email and password');
+        return;
+    }
+    
+    // Send request to server to authenticate user
+    fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Login successful, redirect to dashboard
+            window.location.href = '/dashboard';
+        } else {
+            // Login failed, display error message
+            alert('Invalid email or password');
+        }
+    })
+    .catch(error => {
+        console.error(error);
+    });
+}
+
+</script>
+
+
+
+

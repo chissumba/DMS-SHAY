@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document Management System</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Document Management System</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Documents</a></li>
+				<li><a href="#">Upload</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="upload-section">
+			<h2>Upload Document</h2>
+			<form id="upload-form">
+				<input type="file" id="document" name="document" multiple>
+				<button>Upload</button>
+			</form>
+		</section>
+		<section id="document-section">
+			<h2>Documents</h2>
+			<ul id="document-list">
+				<!-- List of documents will be generated here -->
+			</ul>
+		</section>
+	</main>
+	<script src="script.js"></script>
+</body>
+</html>
+
+<style>
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 1em;
+	text-align: center;
+}
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+}
+nav li {
+	margin-right: 20px;
+}
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2em;
+}
+#upload-section {
+	background-color: blue;
+	padding: 2em;
+	margin-bottom: 2em;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	width: 80%;
+}
+#document-section {
+	background-color: blue;
+	padding: 2em;
+	margin-bottom: 2em;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	width: 80%;
+}
+#document-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#document-list li {
+	margin-bottom: 10px;
+}
+#upload-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#upload-form input[type="file"] {
+	margin-bottom: 10px;
+}
+</style>
+<script>
+// Add your JavaScript code here
+console.log("Welcome to the document management system!");
+
+// Get the document list element
+const documentList = document.getElementById("document-list");
+
+// Get the upload form element
+const uploadForm = document.getElementById("upload-form");
+
+// Add an event listener to the upload form
+uploadForm.addEventListener("submit", (e) => {
+	e.preventDefault();
+	const files = document.getElementById("document").files;
+	// Add code to handle file upload here
+	console.log("Files uploaded:", files);
+	files.forEach((file) => {
+		const listItem = document.createElement("li");
+		const link = document.createElement("a");
+		link.href = "#";
+		link.textContent = file.name;
+		listItem.appendChild(link);
+		documentList.appendChild(listItem);
+	});
+});
+</script>
+
+This updated code creates a larger upload section and document section, and allows users to upload multiple files at once. The uploaded files will be listed in the document section. Please note that this code does not handle the actual file upload, you will need to add that functionality yourself.

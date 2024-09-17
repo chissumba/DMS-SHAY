@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>upload-documents-form</title>
+          <link rel="stylesheet" href="styles.css">
+      </head>
+      <body style="background-color: skyblue;">
+          <header>
+              <style>
+
+              .body{
+                background-color: skyblue;
+
+              }
+
+              .container {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0;
+              text-decoration: none;
+          }
+          
+          .logo img {
+              height: 100px;
+              width: 300px;
+          }
+          nav ul {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              display: flex;
+              font-size: xx-large;
+          }
+          
+          nav ul li {
+              margin-left: 0px;
+          }
+          
+          nav ul li a {
+              color: white;
+              text-decoration: none;
+              padding: 5px 10px;
+              font-size: xx-large;
+          }
+          
+          nav ul li a:hover {
+              background-color: purple;
+              border-radius: 5px;
+          }    
+          </style>
+              <div class="container">
+                  <div class="logo">
+                      <img src="./imagies/ECHO FLUX.png" alt="Logo">
+                  </div>
+                  <nav>
+                      <ul>
+                          <li><a href="./index.html">Home</a></li>
+                          <li><a href="./about.html">About</a></li>
+                          <li><a href="service.html">Services</a></li>
+                          <li><a href="./Contact.html">Contact</a></li>
+                          <li><a href="login.html">Login</a></li>
+                      </ul>
+                  </nav>
+              </div>
+          </header> <main>
+        <section class="upload-documents-section">
+            <h1>Upload Documents <i class="fa-solid fa-file-upload"></i></h1>
+            <form class="upload-documents-form">
+                <input type="file" multiple>
+                <button>Upload <i class="fa-solid fa-arrow-up"></i></button>
+            </form>
+            <table class="documents-table">
+                <thead>
+                    <tr>
+                        <th>Document Name</th>
+                        <th>Uploaded On</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Documents will be listed here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 [Company Name]. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+
+.upload-documents-section {
+    padding: 2em;
+    text-align: center;
+}
+
+.upload-documents-form input[type="file"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.upload-documents-form button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.documents-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.documents-table th, .documents-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.documents-table th {
+    background-color: #f0f0f0;
+}
+
+</style>
+<script>
+
+// Upload documents
+document.querySelector('.upload-documents-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const files = document.querySelector('.upload-documents-form input[type="file"]').files;
+    
+    // Send request to server to upload documents
+    fetch('/upload-documents', {
+        method: 'POST',
+        body: files
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Update documents table
+        const documentsTable = document.querySelector('.documents-table tbody');
+        data.documents.forEach(document => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${document.name}</td>
+                <td>${document.uploadedOn}</td>
+                <td>${document.status}</td>
+                <td>
+                    <button>View <i class="fa-solid fa-eye"></i></button>
+                    <button>Download <i class="fa-solid fa-download"></i></button>
+                    <button>Delete <i class="fa-solid fa-trash"></i></button>
+                </td>
+            `;
+            documentsTable.appendChild(row);
+        });
+    })
+    .catch(error => {
+        console.error(error);
+    });
+});
+</script>
+

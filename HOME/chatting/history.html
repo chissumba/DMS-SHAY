@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>History</h1>
+    </header>
+    <main>
+        <section class="history-section">
+            <h2>Your Files</h2>
+            <ul>
+                <!-- List of files will be displayed here -->
+            </ul>
+            <button class="clear-history-button">Clear History</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+
+.history-section {
+    padding: 2em;
+    text-align: center;
+}
+
+.history-section h2 {
+    margin-bottom: 10px;
+}
+
+.history-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history-section li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.history-section li:hover {
+    background-color: #f0f0f0;
+}
+
+.clear-history-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.clear-history-button:hover {
+    background-color: #3e8e41;
+}
+
+</style>
+<script>
+
+// Get the list of files from the server
+fetch('/get-files')
+.then(response => response.json())
+.then(files => {
+    const fileList = document.querySelector('.history-section ul');
+    
+    files.forEach(file => {
+        const fileListItem = document.createElement('li');
+        fileListItem.textContent = file.name;
+        fileList.appendChild(fileListItem);
+    });
+});
+
+// Add an event listener to the clear history button
+document.querySelector('.clear-history-button').addEventListener('click', () => {
+    // Send a request to the server to clear the history
+    fetch('/clear-history', { method: 'POST' })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        // Update the file list
+        const fileList = document.querySelector('.history-section ul');
+        fileList.innerHTML = '';
+    })
+    .catch(error => {
+        console.error(error);
+    });
+});
+
+
+// Add an event listener to each file list item
+document.querySelectorAll('.history-section li').forEach(fileListItem => {
+    fileListItem.addEventListener('click', () => {
+        // Get the file name from the list item
+        const fileName = fileListItem.textContent;
+        
+        // Send a request to the server to get the file details
+        fetch(`/get-file-details?fileName=${fileName}`)
+        .then(response => response.json())
+        .then(fileDetails => {
+            // Display the file details
+            const fileDetailsModal = document.createElement('div');
+            fileDetailsModal.innerHTML = `
+                <h2>File Details</h2>
+                <p>Name: ${fileDetails.name}</p>
+                <p>Type: ${fileDetails.type}</p>
+                <p>Size: ${fileDetails.size} bytes</p>
+                <p>Uploaded: ${fileDetails.uploaded}</p>
+            `;
+            document.body.appendChild(fileDetailsModal);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    });
+});
+
+
+</script>
+
+
+
+
+
+
+
+

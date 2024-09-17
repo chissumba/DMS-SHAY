@@ -1,0 +1,271 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>upload-documents-form</title>
+          <link rel="stylesheet" href="styles.css">
+      </head>
+      <body style="background-color: lightpink;">
+          <header>
+              <style>
+
+              .body{
+                background-color: skyblue;
+
+              }
+
+              .container {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0;
+              text-decoration: none;
+          }
+          
+          .logo img {
+              height: 100px;
+              width: 300px;
+          }
+          nav ul {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              display: flex;
+              font-size: xx-large;
+          }
+          
+          nav ul li {
+              margin-left: 0px;
+          }
+          
+          nav ul li a {
+              color: white;
+              text-decoration: none;
+              padding: 5px 10px;
+              font-size: xx-large;
+          }
+          
+          nav ul li a:hover {
+              background-color: purple;
+              border-radius: 5px;
+          }    
+          </style>
+              <div class="container">
+                  <div class="logo">
+                      <img src="./imagies/ECHO FLUX.png" alt="Logo">
+                  </div>
+                  <nav>
+                      <ul>
+                          <li><a href="./index.html">Home</a></li>
+                          <li><a href="./about.html">About</a></li>
+                          <li><a href="service.html">Services</a></li>
+                          <li><a href="./Contact.html">Contact</a></li>
+                          <li><a href="login.html">Login</a></li>
+                      </ul>
+                  </nav>
+              </div>
+          </header> 
+    <main>
+        <section class="settings-section">
+            <h1>Settings <i class="fa-solid fa-gear"></i></h1>
+            <form class="settings-form">
+                <h2>Account Settings</h2>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <h2>Document Settings</h2>
+                <label for="default-folder">Default Folder:</label>
+                <select id="default-folder" name="default-folder">
+                    <option value="documents">Documents</option>
+                    <option value="images">Images</option>
+                    <option value="videos">Videos</option>
+                </select>
+                <label for="file-size-limit">File Size Limit:</label>
+                <input type="number" id="file-size-limit" name="file-size-limit">
+                <h2>Security Settings</h2>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password">
+                <button>Save Changes</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 [Company Name]. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+
+.settings-section {
+    padding: 2em;
+    text-align: center;
+}
+
+.settings-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid blue;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.settings-form h2 {
+    margin-top: 20px;
+}
+
+.settings-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.settings-form input[type="text"],
+.settings-form input[type="email"],
+.settings-form input[type="password"],
+.settings-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.settings-form button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+</style>
+<script>
+
+// Save settings
+document.querySelector('.settings-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const settings = {
+        username: document.querySelector('#username').value,
+        email: document.querySelector('#email').value,
+        defaultFolder: document.querySelector('#default-folder').value,
+        fileSizeLimit: document.querySelector('#file-size-limit').value,
+        password: document.querySelector('#password').value,
+        confirmPassword: document.querySelector('#confirm-password').value
+    };
+    
+    // Send request to server to save settings
+    fetch('/save-settings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(settings)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Settings saved successfully, display success message
+            alert('Settings saved successfully');
+        } else {
+            // Error saving settings, display error message
+            alert('Error saving settings');
+        }
+    })
+    .catch(error => {
+        console.error(error);
+    });
+});
+
+
+// Get current settings
+fetch('/get-settings')
+.then(response => response.json())
+.then(data => {
+    document.querySelector('#username').value = data.username;
+    document.querySelector('#email').value = data.email;
+    document.querySelector('#default-folder').value = data.defaultFolder;
+    document.querySelector('#file-size-limit').value = data.fileSizeLimit;
+});
+
+// Change password
+document.querySelector('#change-password').addEventListener('click', () => {
+    const password = document.querySelector('#password').value;
+    const confirmPassword = document.querySelector('#confirm-password').value;
+    
+    if (password !== confirmPassword) {
+        alert('Passwords do not match');
+        return;
+    }
+    
+    // Send request to server to change password
+    fetch('/change-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Password changed successfully, display success message
+            alert('Password changed successfully');
+        } else {
+            // Error changing password, display error message
+            alert('Error changing password');
+        }
+    })
+    .catch(error => {
+        console.error(error);
+    });
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
