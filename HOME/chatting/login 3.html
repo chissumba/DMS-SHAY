@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login & Signup Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="forms-container">
+            <!-- Login Form -->
+            <form action="#" class="sign-in-form">
+                <h2 class="title">Login</h2>
+                <div class="input-field">
+                    <input type="text" placeholder="Username" required />
+                </div>
+                <div class="input-field">
+                    <input type="password" placeholder="Password" required />
+                </div>
+                <input type="submit" value="Login" class="btn solid" />
+            </form>
+
+            <!-- Signup Form -->
+            <form action="#" class="sign-up-form">
+                <h2 class="title">Sign Up</h2>
+                <div class="input-field">
+                    <input type="text" placeholder="Username" required />
+                </div>
+                <div class="input-field">
+                    <input type="email" placeholder="Email" required />
+                </div>
+                <div class="input-field">
+                    <input type="password" placeholder="Password" required />
+                </div>
+                <input type="submit" class="btn" value="Sign Up" />
+            </form>
+        </div>
+
+        <!-- Panels for animation -->
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>New here?</h3>
+                    <p>Sign up now to join the community!</p>
+                    <button class="btn transparent" id="sign-up-btn">Sign Up</button>
+                </div>
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Already have an account?</h3>
+                    <p>Log in with your credentials</p>
+                    <button class="btn transparent" id="sign-in-btn">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+<style>
+    /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: black;
+}
+
+/* Container styling */
+.container {
+    position: relative;
+    width: 850px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Forms container */
+.forms-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in-form,
+.sign-up-form {
+    position: absolute;
+    width: 50%;
+    padding: 50px;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-up-form {
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Input fields and buttons */
+.input-field {
+    margin: 20px 0;
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    transition: box-shadow 0.4s ease;
+    outline: none;
+}
+
+input:focus {
+    box-shadow: 0 0 10px 2px rgba(0, 176, 255, 0.8); /* Glowing effect */
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    background-color: purple;
+    box-shadow: 0 0 10px rgba(0, 176, 255, 0.8); /* Glowing on hover */
+}
+
+/* Panels for sliding effect */
+.panels-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: blue;
+    color: #fff;
+    text-align: center;
+    transition: all 0.6s ease-in-out;
+}
+
+.left-panel {
+    left: 0;
+}
+
+.right-panel {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.container.sign-up-mode .right-panel {
+    transform: translateX(0%);
+}
+
+.container.sign-up-mode .left-panel {
+    transform: translateX(-100%);
+}
+
+.container.sign-up-mode .sign-in-form {
+    opacity: 0;
+}
+
+.container.sign-up-mode .sign-up-form {
+    opacity: 1;
+}
+
+/* Panel buttons */
+.transparent {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 25px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.transparent:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+</style>
+<script>
+ const signUpBtn = document.getElementById('sign-up-btn');
+const signInBtn = document.getElementById('sign-in-btn');
+const container = document.querySelector('.container');
+
+signUpBtn.addEventListener('click', () => {
+    container.classList.add('sign-up-mode');
+});
+
+signInBtn.addEventListener('click', () => {
+    container.classList.remove('sign-up-mode');
+});
+   
+</script>
