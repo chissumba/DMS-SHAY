@@ -1,0 +1,167 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>upload-documents-form</title>
+          <link rel="stylesheet" href="styles.css">
+      </head>
+      <body>
+
+    <div class="appointment-container">
+        <h1>Book Your Appointment</h1>
+        <form id="appointmentForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Time</label>
+            <input type="time" id="time" name="time" required>
+
+            <button type="submit" id="submitBtn">Book Now</button>
+
+            <a href="./User page@.html" class="cta-button">Cancel</a>
+        </form>
+
+        <div id="confirmationMessage" class="hidden">
+            <h2>Appointment Confirmed!</h2>
+            <p>Thank you, <span id="userName"></span>. We have received your appointment for <span id="appointmentDate"></span> at <span id="appointmentTime"></span>.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to JavaScript -->
+
+<style>
+
+
+body {
+    background-color: #0d0d0d;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(./business\ 1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Container for the appointment form */
+.appointment-container {
+    text-align: center;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    width: 90%;
+    max-width: 1000px;
+}
+
+/* Neon effect for the title */
+.appointment-container h1 {
+    font-size: 2.5rem;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #00f, 0 0 40px #0ff, 0 0 70px #0ff;
+    margin-bottom: 20px;
+}
+
+/* Form inputs */
+form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: #222;
+    color: #0ff;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+form input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00f, 0 0 10px #0ff;
+}
+
+/* Button with neon glow */
+button {
+    background-color: #0ff;
+    color: blue;
+    font-size: 1.3rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #00f, 0 0 25px #0ff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #0ff, 0 0 50px #0ff, 0 0 75px #0ff;
+}
+
+/* Hidden confirmation message */
+.hidden {
+    display: none;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: RED;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    animation: fallDown 2s ease-out;
+    box-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 50px #0ff;
+}
+
+.cta-btn:hover {
+    background: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+
+#confirmationMessage h2 {
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff, 0 0 30px #00f;
+    margin-top: 20px;
+}
+
+</style>
+<script>
+document.getElementById("appointmentForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Get form data
+    const name = document.getElementById("name").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+
+    // Display confirmation message
+    document.getElementById("userName").textContent = name;
+    document.getElementById("appointmentDate").textContent = date;
+    document.getElementById("appointmentTime").textContent = time;
+
+    document.getElementById("appointmentForm").classList.add("hidden");
+    document.getElementById("confirmationMessage").classList.remove("hidden");
+});
+
+</script>

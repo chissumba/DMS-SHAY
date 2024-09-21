@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(./business\ 3.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            height: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .user-list, .contract-list, .project-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .user-list li, .contract-list li, .project-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .input-group input {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .input-group button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .input-group button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #007bff;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: RED;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    animation: fallDown 2s ease-out;
+    box-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 50px #0ff;
+}
+
+.cta-btn:hover {
+    background: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Admin Dashboard</h1>
+</header>
+
+<div class="container">
+    <h2>User Management</h2>
+    <div class="input-group">
+        <input type="text" id="userInput" placeholder="Add a new user...">
+        <button onclick="addUser()">Add User</button>
+    </div>
+    <ul class="user-list" id="userList">
+        <!-- Users will be appended here -->
+    </ul>
+
+    <h2>Contract Management</h2>
+    <div class="input-group">
+        <input type="text" id="contractInput" placeholder="Add a new contract...">
+        <button onclick="addContract()">Add Contract</button>
+    </div>
+    <ul class="contract-list" id="contractList">
+        <!-- Contracts will be appended here -->
+    </ul>
+
+    <h2>Project Oversight</h2>
+    <div class="input-group">
+        <input type="text" id="projectInput" placeholder="Add a new project...">
+        <button onclick="addProject()">Add Project</button>
+    </div>
+    <ul class="project-list" id="projectList">
+        <!-- Projects will be appended here -->
+    </ul>
+</div>
+<a href="./User page@.html" class="cta-button">Back</a>
+<footer>
+    <p>Quick Links: Privacy Policy | Terms of Service | FAQs</p>
+    <p>Contact: info@example.com | (123) 456-7890</p>
+</footer>
+
+<script>
+    const users = [];
+    const contracts = [];
+    const projects = [];
+
+    function addUser() {
+        const userInput = document.getElementById('userInput');
+        const userList = document.getElementById('userList');
+
+        if (userInput.value.trim() === '') {
+            alert('Please enter a user name!');
+            return;
+        }
+
+        const userName = userInput.value;
+        users.push(userName);
+
+        const li = document.createElement('li');
+        li.textContent = userName;
+
+        userList.appendChild(li);
+        userInput.value = ''; // Clear the input field
+    }
+
+    function addContract() {
+        const contractInput = document.getElementById('contractInput');
+        const contractList = document.getElementById('contractList');
+
+        if (contractInput.value.trim() === '') {
+            alert('Please enter a contract name!');
+            return;
+        }
+
+        const contractName = contractInput.value;
+        contracts.push(contractName);
+
+        const li = document.createElement('li');
+        li.textContent = contractName;
+
+        contractList.appendChild(li);
+        contractInput.value = ''; // Clear the input field
+    }
+
+    function addProject() {
+        const projectInput = document.getElementById('projectInput');
+        const projectList = document.getElementById('projectList');
+
+        if (projectInput.value.trim() === '') {
+            alert('Please enter a project name!');
+            return;
+        }
+
+        const projectName = projectInput.value;
+        projects.push(projectName);
+
+        const li = document.createElement('li');
+        li.textContent = projectName;
+
+        projectList.appendChild(li);
+        projectInput.value = ''; // Clear the input field
+    }
+</script>
+
+</body>
+</html>

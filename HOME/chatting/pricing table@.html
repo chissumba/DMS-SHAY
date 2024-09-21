@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMS Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header>
+        <div class="logo">
+            <img src="./Screenshot 2024-08-28 173454.png" alt="DMS Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./khanda@.html">Home</a></li>
+                <li><a href="./service@.html">Services</a></li>
+                <li><a href="./about d.html">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="./sign up@.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+<!-- Link to your CSS file -->
+    <style>
+        /* Basic styles for the landing page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-image: url(./business\ 8.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    animation: fallDown 5s ease-out;
+
+}
+
+header .logo img {
+    height: 100px;
+    width: 300px;
+    animation: fallDown 5s ease-out;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    font-size: xx-large;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+nav a:hover {
+    color: blue;
+}
+</style>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h2 class="hero-title falling-header">Efficient Document Management Made Easy</h2>
+            <p>Best Deals, Dont miss the chance!</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search documents..." />
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <a href="./checkout form@.html" class="cta-button">Check In</a>
+        </div>
+    </section>
+    <style>
+      
+    .hero-section {
+        height: 40vh;
+        background-image: url(./business\ 8.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding-top: 60px;
+    }
+    
+    .hero-content {
+        max-width: 600px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        animation: fall 1s forwards;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+    
+    .search-bar {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .search-bar input[type="text"] {
+        padding: 10px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px 0 0 5px;
+        width: 70%;
+    }
+    
+    .search-bar button {
+        padding: 10px;
+        font-size: 1rem;
+        background-color: #ff9933;
+        color: white;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+    }
+    
+    .search-bar button:hover {
+        background-color: #ff6600;
+    }
+    
+    /* CTA Button */
+    .cta-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 25px;
+        background-color: #ff9933;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        animation: bounce 2s infinite;
+    }
+    
+    .cta-button:hover {
+        background-color: #ff6600;
+    }
+    
+    
+    /* Animations */
+    @keyframes fall {
+        0% {
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes glow {
+        from {
+            text-shadow: 0 0 5px #ff9933, 0 0 10px #ff9933, 0 0 15px #ff9933;
+        }
+        to {
+            text-shadow: 0 0 20px #ff6600, 0 0 30px #ff6600, 0 0 40px #ff6600;
+        }
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-30px);
+        }
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+    
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    </style>
+    
+    <script>
+    
+       
+        // Smooth scroll for nav links
+        const navLinks = document.querySelectorAll('.navbar nav ul li a, .sidebar ul li a');
+    
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const sectionId = this.getAttribute('href');
+                document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    
+    </script>
+
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    .columns {
+      float: left;
+      width: 33.3%;
+      padding: 8px;
+    }
+    
+    .price {
+      list-style-type: none;
+      border: 1px solid #eee;
+      margin: 0;
+      padding: 0;
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+    }
+    
+    .price:hover {
+      box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+    }
+    
+    .price .header {
+      background-color: #04AA6D;
+      color: white;
+      font-size: 25px;
+    }
+    
+    .price li {
+      border-bottom: 1px solid #eee;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .price .grey {
+      background-color: #eee;
+      font-size: 20px;
+    }
+    
+    .button {
+      background-color: #04AA6D;
+      border: none;
+      color: white;
+      padding: 10px 25px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .columns {
+        width: 100%;
+      }
+    }
+    </style>
+    <body>
+    
+    <h2 style="text-align:center">Pricing Tables</h2>
+    
+    
+    <div class="columns">
+      <ul class="price">
+        <li class="header">Basic</li>
+        <li class="grey">$ 9.99 / year</li>
+        <li>10GB Storage</li>
+        <li>10 Emails</li>
+        <li>10 Domains</li>
+        <li>1GB Bandwidth</li>
+        <li class="grey"><a href="./checkout form@.html" class="button">Sign Up</a></li>
+      </ul>
+    </div>
+    
+    <div class="columns">
+      <ul class="price">
+        <li class="header" style="background-color:#04AA6D">Pro</li>
+        <li class="grey">$ 24.99 / year</li>
+        <li>25GB Storage</li>
+        <li>25 Emails</li>
+        <li>25 Domains</li>
+        <li>2GB Bandwidth</li>
+        <li class="grey"><a href="./checkout form@.html" class="button">Sign Up</a></li>
+      </ul>
+    </div>
+    
+    <div class="columns">
+      <ul class="price">
+        <li class="header">Premium</li>
+        <li class="grey">$ 49.99 / year</li>
+        <li>50GB Storage</li>
+        <li>50 Emails</li>
+        <li>50 Domains</li>
+        <li>5GB Bandwidth</li>
+        <li class="grey"><a href="./checkout form@.html" class="button">Sign Up</a></li>
+      </ul>
+    </div>
+
+    </body>
+    </html>

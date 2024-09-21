@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Report Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url(./business\ 3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        header {
+            background-image: url(./business\ 8.webp);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .report-section {
+            margin: 20px 0;
+        }
+        .report-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .report-section li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #007bff;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* CTA Button */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: RED;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    animation: fallDown 2s ease-out;
+    box-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 50px #0ff;
+}
+
+.cta-btn:hover {
+    background: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>User Report Page</h1>
+</header>
+
+<div class="container">
+    <h2>Productivity Report</h2>
+
+    <div class="report-section">
+        <h3>Tasks Completed</h3>
+        <ul id="completedTasksList">
+            <!-- Completed tasks will be appended here -->
+        </ul>
+    </div>
+
+    <div class="report-section">
+        <h3>Goals Achieved</h3>
+        <ul id="achievedGoalsList">
+            <!-- Achieved goals will be appended here -->
+        </ul>
+    </div>
+
+    <div class="report-section">
+        <h3>Overall Productivity Statistics</h3>
+        <p>Total Tasks Completed: <span id="totalTasks">0</span></p>
+        <p>Total Goals Achieved: <span id="totalGoals">0</span></p>
+        <p>Total Productivity Points: <span id="productivityPoints">0</span></p>
+    </div>
+</div>
+<a href="./User page@.html" class="cta-button">Back</a>
+<footer>
+    <p>Quick Links: Privacy Policy | Terms of Service | FAQs</p>
+    <p>Contact: info@example.com | (123) 456-7890</p>
+</footer>
+
+<script>
+    // Sample data for completed tasks and achieved goals
+    const completedTasks = ["Task 1: Finish project", "Task 2: Review documents", "Task 3: Send emails"];
+    const achievedGoals = ["Goal 1: Read 5 books", "Goal 2: Complete a certification"];
+
+    function populateReport() {
+        const completedTasksList = document.getElementById('completedTasksList');
+        const achievedGoalsList = document.getElementById('achievedGoalsList');
+        const totalTasks = document.getElementById('totalTasks');
+        const totalGoals = document.getElementById('totalGoals');
+        const productivityPoints = document.getElementById('productivityPoints');
+
+        // Populate completed tasks
+        completedTasks.forEach(task => {
+            const li = document.createElement('li');
+            li.textContent = task;
+            completedTasksList.appendChild(li);
+        });
+
+        // Populate achieved goals
+        achievedGoals.forEach(goal => {
+            const li = document.createElement('li');
+            li.textContent = goal;
+            achievedGoalsList.appendChild(li);
+        });
+
+        // Update statistics
+        totalTasks.textContent = completedTasks.length;
+        totalGoals.textContent = achievedGoals.length;
+        productivityPoints.textContent = completedTasks.length + achievedGoals.length; // Example calculation
+    }
+
+    // Call the function to populate the report on page load
+    window.onload = populateReport;
+</script>
+
+</body>
+</html>

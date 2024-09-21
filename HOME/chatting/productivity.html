@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(./business\ 1.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        header {
+            background-image: url(./business\ 3.jpg);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .todo-list, .goal-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .todo-list li, .goal-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .input-group input {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .input-group button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .input-group button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #007bff;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: RED;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    animation: fallDown 2s ease-out;
+    box-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 50px #0ff;
+}
+
+.cta-btn:hover {
+    background: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Productivity Page</h1>
+</header>
+
+<div class="container">
+    <h2>To-Do List</h2>
+    <div class="input-group">
+        <input type="text" id="todoInput" placeholder="Add a new task...">
+        <button onclick="addTodo()">Add Task</button>
+    </div>
+    <ul class="todo-list" id="todoList">
+        <!-- To-Do tasks will be appended here -->
+    </ul>
+
+    <h2>Goals</h2>
+    <div class="input-group">
+        <input type="text" id="goalInput" placeholder="Set a new goal...">
+        <button onclick="addGoal()">Add Goal</button>
+    </div>
+    <ul class="goal-list" id="goalList">
+        <!-- Goals will be appended here -->
+    </ul>
+
+    <h2>Productivity Tracker</h2>
+    <p>Track your productivity with a simple counter:</p>
+    <button onclick="increaseProductivity()">Increase Productivity</button>
+    <p>Productivity Count: <span id="productivityCount">0</span></p>
+</div>
+<a href="./User page@.html" class="cta-button">Back</a>
+<footer>
+    <p>Quick Links: Privacy Policy | Terms of Service | FAQs</p>
+    <p>Contact: info@example.com | (123) 456-7890</p>
+</footer>
+
+<script>
+    let productivityCount = 0;
+
+    function addTodo() {
+        const todoInput = document.getElementById('todoInput');
+        const todoList = document.getElementById('todoList');
+
+        if (todoInput.value.trim() === '') {
+            alert('Please enter a task!');
+            return;
+        }
+
+        const li = document.createElement('li');
+        li.textContent = todoInput.value;
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.onclick = function() {
+            todoList.removeChild(li);
+        };
+
+        li.appendChild(deleteButton);
+        todoList.appendChild(li);
+        todoInput.value = ''; // Clear the input field
+    }
+
+    function addGoal() {
+        const goalInput = document.getElementById('goalInput');
+        const goalList = document.getElementById('goalList');
+
+        if (goalInput.value.trim() === '') {
+            alert('Please enter a goal!');
+            return;
+        }
+
+        const li = document.createElement('li');
+        li.textContent = goalInput.value;
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.onclick = function() {
+            goalList.removeChild(li);
+        };
+
+        li.appendChild(deleteButton);
+        goalList.appendChild(li);
+        goalInput.value = ''; // Clear the input field
+    }
+
+    function increaseProductivity() {
+        productivityCount++;
+        document.getElementById('productivityCount').textContent = productivityCount;
+    }
+</script>
+
+</body>
+</html>

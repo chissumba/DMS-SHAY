@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+    <h2>DMS Dashboard</h2>
+    <nav>
+        <ul>
+            <li><a href="./khanda@.html">Home</a></li>
+            <li><a href="./service@.html">Services</a></li>
+            <li><a href="User page@.html">Dashboard</a></li>
+            <li><a href="./appointment@.html">Schedule Appointment</a></li>
+            <li><a href="./categories@.html">Categories</a></li>
+            <li><a href="./admin@.html">Admin</a></li>
+            <li><a href="./productivity.html">Productivity</a></li>
+            <li><a href="./project@.html">Projects</a></li>
+            <li><a href="./2.html">Chat</a></li>
+            <li><a href="./check up.html">Check up</a></li>
+            <li><a href="./history.html">History</a></li>
+            <li><a href="./NOTEPAD.html">Notes</a></li>
+        </ul>
+    </nav>
+</aside>
+
+<!-- Main content area -->
+<div class="main-content">
+    <header>
+        <h1>Welcome to Document Management System</h1>
+        <button id="uploadBtn">Upload New Document</button>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="card">
+            <h3>Total Documents</h3>
+            <p id="totalDocuments">120</p>
+        </div>
+        <div class="card">
+            <h3>Documents This Month</h3>
+            <p id="monthlyDocuments">15</p>
+        </div>
+        <div class="card">
+            <h3>Categories</h3>
+            <p id="categoriesCount">5</p>
+        </div>
+    </section>
+
+    <!-- Recent Documents Section -->
+    <section class="recent-documents">
+        <h2>Recent Documents</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Document Name</th>
+                    <th>Category</th>
+                    <th>Date Added</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="documentList">
+                <tr>
+                    <td>Project Proposal</td>
+                    <td>Business</td>
+                    <td>2024-09-20</td>
+                    <td><button class="action-btn">View</button></td>
+                </tr>
+                <tr>
+                    <td>Financial Report Q3</td>
+                    <td>Finance</td>
+                    <td>2024-09-19</td>
+                    <td><button class="action-btn">View</button></td>
+                </tr>
+                <tr></tr>
+                    <td>Project Proposal</td>
+                    <td>Business</td>
+                    <td>2024-09-20</td>
+                    <td><button class="action-btn">View</button></td>
+                </tr>
+                <tr></tr>
+                    <td>Project Proposal</td>
+                    <td>Business</td>
+                    <td>2024-09-20</td>
+                    <td><button class="action-btn">View</button></td>
+                </tr>
+                <tr></tr>
+                    <td>Project Proposal</td>
+                    <td>Business</td>
+                    <td>2024-09-20</td>
+                    <td><button class="action-btn">View</button></td>
+                </tr>
+                <tr></tr>
+                    <td>Project Proposal</td>
+                    <td>Business</td>
+                    <td>2024-09-20</td>
+                    <td><button class="action-btn">View</button></td>
+                </tr>
+                <tr></tr>
+                    <td>Project Proposal</td>
+                    <td>Business</td>
+                    <td>2024-09-20</td>
+                    <td><button class="action-btn">View</button></td>
+                </tr><tr></tr>
+                    <td>Project Proposal</td>
+                    <td>Business</td>
+                    <td>2024-09-20</td>
+                    <td><button class="action-btn">View</button></td>
+                </tr><tr></tr>
+                    <td>Project Proposal</td>
+                    <td>Business</td>
+                    <td>2024-09-20</td>
+                    <td><button class="action-btn">View</button></td>
+                </tr>
+
+
+                <!-- More documents can be dynamically added -->
+            </tbody>
+        </table>
+    </section>
+</div>
+
+<!-- Add a modal for file upload -->
+<div id="uploadModal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <h2>Upload New Document</h2>
+        <form id="uploadForm">
+            <label for="documentName">Document Name</label>
+            <input type="text" id="documentName" required>
+
+            <label for="documentCategory">Category</label>
+            <select id="documentCategory" required>
+                <option value="Business">Business</option>
+                <option value="Finance">Finance</option>
+                <option value="Legal">Legal</option>
+                <option value="HR">HR</option>
+            </select>
+
+            <label for="documentFile">Select File</label>
+            <input type="file" id="documentFile" required>
+
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- Link to JavaScript -->
+</body>
+</html>
+<style>
+/* Reset */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Arial', sans-serif;
+}
+
+body {
+display: flex;
+height: 100vh;
+background-image: url(./business\ 3.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+/* Sidebar */
+.sidebar {
+width: 250px;
+background-color: purple;
+color: white;
+padding: 20px;
+font-size: x-large;
+}
+
+.sidebar h2 {
+font-size: 1.5rem;
+margin-bottom: 30px;
+}
+
+.sidebar ul {
+list-style-type: none;
+padding: 0;
+}
+
+.sidebar ul li {
+margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+color: white;
+text-decoration: none;
+font-size: 1.1rem;
+}
+
+.sidebar ul li a:hover {
+    color: blue;
+}
+
+/* Main content */
+.main-content {
+flex-grow: 1;
+padding: 20px;
+}
+
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 40px;
+}
+
+header h1 {
+font-size: 2rem;
+}
+
+header button {
+padding: 10px 20px;
+background-color: purple;
+color: white;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+}
+
+header button:hover {
+background-color: blue;
+}
+
+/* Stats Section */
+.stats {
+display: flex;
+justify-content: space-between;
+margin-bottom: 40px;
+}
+
+.card {
+background-color: blue;
+color: white;
+padding: 20px;
+border-radius: 5px;
+text-align: center;
+width: 30%;
+}
+
+.card h3 {
+font-size: 1.5rem;
+margin-bottom: 15px;
+}
+
+.card p {
+font-size: 1.8rem;
+}
+
+/* Recent Documents Section */
+.recent-documents {
+background-color: wheat;
+padding: 20px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.recent-documents h2 {
+font-size: 1.8rem;
+margin-bottom: 20px;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+}
+
+table th, table td {
+padding: 15px;
+text-align: left;
+border-bottom: 1px solid purple;
+}
+
+table th {
+background-color: blue;
+}
+
+table td button {
+padding: 5px 10px;
+background-color: blue;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+table td button:hover {
+background-color: blue;
+}
+
+/* Modal for Upload */
+.modal {
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 80%;
+background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+background-color:purple;
+padding: 20px;
+border-radius: 10px;
+width: 400px;
+height: 300px;
+font-size: x-large;
+}
+
+.hidden {
+display: none;
+}
+
+.close-btn {
+float: right;
+cursor: pointer;
+font-size: 1.5rem;
+}
+
+</style>
+<script>
+// Handle upload button click to show modal
+document.getElementById('uploadBtn').addEventListener('click', function() {
+document.getElementById('uploadModal').classList.remove('hidden');
+});
+
+// Handle close modal
+document.getElementById('closeModal').addEventListener('click', function() {
+document.getElementById('uploadModal').classList.add('hidden');
+});
+
+// Handle document upload (fake for now)
+document.getElementById('uploadForm').addEventListener('submit', function(event) {
+event.preventDefault();
+
+const name = document.getElementById('documentName').value;
+const category = document.getElementById('documentCategory').value;
+const date = new Date().toISOString().split('T')[0]; // Get today's date
+
+const newRow = document.createElement('tr');
+newRow.innerHTML = `
+    <td>${name}</td>
+    <td>${category}</td>
+    <td>${date}</td>
+    <td><button class="action-btn">View</button></td>
+`;
+
+document.getElementById('documentList').appendChild(newRow);
+
+// Close the modal
+document.getElementById('uploadModal').classList.add('hidden');
+});
+
+</script>
