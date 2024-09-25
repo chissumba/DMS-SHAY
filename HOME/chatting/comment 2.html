@@ -6,7 +6,7 @@
           <title>About Us</title>
           <link rel="stylesheet" href="styles.css">
       </head>
-      <body style="background-color: lightcoral;">
+      <body style="background-image: url(./business\ 11.jpg);background-repeat: no-repeat;background-size: cover;">
           <header>
               <style>
               .container {
@@ -17,6 +17,7 @@
               margin: 0 auto;
               padding: 0;
               text-decoration: none;
+              font-size: x-large;
           }
           
           .logo img {
@@ -49,7 +50,7 @@
           </style>
               <div class="container">
                   <div class="logo">
-                      <img src="./imagies/ECHO FLUX.png" alt="Logo">
+                      <img src="./Screenshot 2024-08-28 173454.png" alt="Logo">
                   </div>
                   <nav>
                       <ul>
@@ -63,8 +64,217 @@
               </div>
           </header>
     <main>
+
+        <style>
+            #overlay {
+              position: fixed;
+              display: none;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-color: rgba(0,0,0,0.5);
+              z-index: 2;
+              cursor: pointer;
+            }
+            
+            #text{
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              font-size: 50px;
+              color: white;
+              transform: translate(-50%,-50%);
+              -ms-transform: translate(-50%,-50%);
+              background: #222;
+            }
+            </style>
+            </head>
+            <body>
+            
+            <div id="overlay" onclick="off()">
+              <div id="text">Any suggestions dont hesitate to contact us</div>
+              <body>
+              </style>
+
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0 auto; /* Center website */
+  max-width: 800px; /* Max width */
+  padding: 20px;
+  background-color: #666;
+}
+
+.heading {
+  font-size: 25px;
+  margin-right: 25px;
+}
+
+.fa {
+  font-size: 25px;
+}
+
+.checked {
+  color: orange;
+}
+
+/* Three column layout */
+.side {
+  float: left;
+  width: 15%;
+  margin-top:10px;
+}
+
+.middle {
+  margin-top:10px;
+  float: left;
+  width: 70%;
+}
+
+/* Place text to the right */
+.right {
+  text-align: right;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The bar container */
+.bar-container {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: white;
+}
+
+/* Individual bars */
+.bar-5 {width: 60%; height: 18px; background-color: #04AA6D;}
+.bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
+.bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
+.bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+.bar-1 {width: 15%; height: 18px; background-color: #f44336;}
+
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+@media (max-width: 400px) {
+  .side, .middle {
+    width: 100%;
+  }
+  .right {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<span class="heading">User Rating</span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<p>4.1 average based on 254 reviews.</p>
+<hr style="border:3px solid #f1f1f1">
+
+<div class="row">
+  <div class="side">
+    <div>5 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>150</div>
+  </div>
+  <div class="side">
+    <div>4 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>63</div>
+  </div>
+  <div class="side">
+    <div>3 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>15</div>
+  </div>
+  <div class="side">
+    <div>2 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>6</div>
+  </div>
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>20</div>
+  </div>
+</div>
+
+             
+        
+          
+            </div>
+            
+            <div style="padding:20px">
+              <button onclick="on()" style="background: #222;
+              color:  #0ff;
+              border: 2px solid  #0ff;
+              border-radius: 5px;
+              box-shadow: 0 0 5px  #0ff, 0 0 15px  #0ff, 0 0 20px  #0ff;
+              transition: box-shadow 0.4s ease, background 0.4s ease;
+              outline: none;">SUGGESTIONS</button>
+            </div>
+            
+            <script>
+            function on() {
+              document.getElementById("overlay").style.display = "block";
+            }
+            
+            function off() {
+              document.getElementById("overlay").style.display = "none";
+            }
+            </script>
+               
+
         <section class="comments-section">
-            <h1>Comments 💬</h1>
+            <h1 style="color: turquoise;">Comments 💬</h1>
             <div class="comments-container">
                 <div class="comment">
                     <p>Comment 1 😊</p>
@@ -83,7 +293,7 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 [Company Name]. All rights reserved. 🤝</p>
+        <p>&copy; 2023 ECHO FLUX DMS. All rights reserved. 🤝</p>
     </footer>
     <script src="script.js"></script>
 </body>
@@ -94,11 +304,21 @@
 
 .comments-section {
     padding: 2em;
+    text-align: center;
+    font-size: x-large;
 }
 
 .comments-container {
-    border: 1px solid #ccc;
     padding: 20px;
+    width: 100%;
+    padding: 15px;
+    background: #222;
+    color:  #0ff;
+    border: 2px solid  #0ff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px  #0ff, 0 0 15px  #0ff, 0 0 20px  #0ff;
+    transition: box-shadow 0.4s ease, background 0.4s ease;
+    outline: none;
 }
 
 .comment {
@@ -110,8 +330,9 @@
 }
 
 .comment span {
-    font-size: 12px;
+    font-size: x-large;
     color: #666;
+    text-align: center;
 }
 
 .comment-form {
@@ -120,19 +341,38 @@
 
 .comment-form input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+    padding: 15px;
+    background: #222;
+    color: #0ff;
+    border: 2px solid #0ff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 20px #0ff;
+    transition: box-shadow 0.4s ease, background 0.4s ease;
+    outline: none; 
 }
 
-.comment-form button {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
+
+  /* .comment-form button */
+  .comment-form button{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: purple;
+    color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    animation: fallDown 2s ease-out;
+    box-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 50px #0ff;
 }
+
+.cta-btn:hover {
+    background: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+
 
 .emoji {
     font-size: 18px;
@@ -179,3 +419,150 @@ fetch('/comments')
     });
 </script>
 
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0 auto; /* Center website */
+  max-width: 800px; /* Max width */
+  padding: 20px;
+  background-color: #666;
+}
+
+.heading {
+  font-size: 25px;
+  margin-right: 25px;
+}
+
+.fa {
+  font-size: 25px;
+}
+
+.checked {
+  color: orange;
+}
+
+/* Three column layout */
+.side {
+  float: left;
+  width: 15%;
+  margin-top:10px;
+}
+
+.middle {
+  margin-top:10px;
+  float: left;
+  width: 70%;
+}
+
+/* Place text to the right */
+.right {
+  text-align: right;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The bar container */
+.bar-container {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: white;
+}
+
+/* Individual bars */
+.bar-5 {width: 60%; height: 18px; background-color: #04AA6D;}
+.bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
+.bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
+.bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+.bar-1 {width: 15%; height: 18px; background-color: #f44336;}
+
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+@media (max-width: 400px) {
+  .side, .middle {
+    width: 100%;
+  }
+  .right {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<span class="heading">User Rating</span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<p>4.1 average based on 254 reviews.</p>
+<hr style="border:3px solid #f1f1f1">
+
+<div class="row">
+  <div class="side">
+    <div>5 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>150</div>
+  </div>
+  <div class="side">
+    <div>4 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>63</div>
+  </div>
+  <div class="side">
+    <div>3 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>15</div>
+  </div>
+  <div class="side">
+    <div>2 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>6</div>
+  </div>
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>20</div>
+  </div>
+</div>

@@ -21,15 +21,18 @@
             <li><a href="./admin@.html">Admin</a></li>
             <li><a href="./productivity.html">Productivity</a></li>
             <li><a href="./project@.html">Projects</a></li>
+            <li><a href="./Report@.html">Report</a></li>
             <li><a href="./2.html">Chat</a></li>
             <li><a href="./check up.html">Check up</a></li>
             <li><a href="./history.html">History</a></li>
             <li><a href="./NOTEPAD.html">Notes</a></li>
+            <li><a href="User profile@.html">My profile</a></li>
         </ul>
     </nav>
 </aside>
 
 <!-- Main content area -->
+
 <div class="main-content">
     <header>
         <h1>Welcome to Document Management System</h1>
@@ -133,7 +136,7 @@
         <form id="uploadForm">
             <label for="documentName">Document Name</label>
             <input type="text" id="documentName" required>
-
+            
             <label for="documentCategory">Category</label>
             <select id="documentCategory" required>
                 <option value="Business">Business</option>
@@ -366,3 +369,48 @@ document.getElementById('uploadModal').classList.add('hidden');
 });
 
 </script>
+<style>.callout {
+    position: fixed;
+    bottom: 35px;
+    right: 20px;
+    margin-left: 20px;
+    max-width: 300px;
+  }
+  
+  .callout-header {
+    padding: 25px 15px;
+    background: #555;
+    font-size: 30px;
+    color: white;
+  }
+  
+  .callout-container {
+    padding: 15px;
+    background-color: #ccc;
+    color: black
+  }
+  
+  .closebtn {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .closebtn:hover {
+    color: lightgrey;
+  }
+  </style>
+  </head>
+  <body>
+
+  <div class="callout">
+    <div class="callout-header">CONTRACT</div>
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+    <div class="callout-container">
+      <p>Your contract has been approved <a href="check up.html">View</a> You can download now </p>
+    </div>
+  </div>
+

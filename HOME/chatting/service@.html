@@ -18,7 +18,7 @@
                 <li><a href="./khanda@.html">Home</a></li>
                 <li><a href="./service@.html">Service</a></li>
                 <li><a href="./about.html">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="./contact@.html">Contact</a></li>
                 <li><a href="./why choose us.html">Why Choose Us</a></li>
                 <li><a href="./comment 2.html">Comment</a></li>
                 <li><a href="more information.html">Learn More</a></li>
@@ -43,6 +43,65 @@
             <p>Organize, manage, and secure your documents with ease. Explore our features and see how we can help streamline your workflow.</p>
             <a href="./sign up@.html" class="cta-button">Get Started</a>
         </section>
+
+        <style>
+            .container {
+              position: relative;
+              width: 50%;position: relative;
+        margin: 0 auto;
+        margin-bottom: 1 rem;
+
+            }
+            
+            .image {
+              width: 100%;
+              height: 400px;
+              margin-bottom: 1rem;
+            }
+            
+            .image {vertical-align: middle;}
+
+            .overlay {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              height: 100%;
+              width: 100%;
+              opacity: 0;
+              transition: .5s ease;
+              background-color: #008CBA;
+              background-position: center;
+              margin-bottom: 1rem;
+            }
+            
+            .container:hover .overlay {
+              opacity: 1;
+              margin-bottom: 1rem;
+            }
+            
+            .text {
+              color: white;
+              font-size: 20px;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              -webkit-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+              text-align: center;
+            }
+            </style>
+        
+            <div class="container">
+              <img src="./Screenshot_20240614-101141_WhatsApp.jpg" alt="Avatar" class="image">
+              <div class="overlay">
+                <div class="text">Discover Our Document Management Solutions</h2>
+                    <p>Streamline your document processes with our comprehensive tool</div>
+              </div>
+            </div>
+
 
         <!-- Benefits Section -->
         <section id="benefits" class="benefits">
@@ -159,7 +218,7 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 1rem;
-    font-size: xx-large;
+    font-size: x-large;
 }
 
 nav a {
@@ -226,6 +285,7 @@ main {
     background: purple;
 }
 
+
 .benefits, .features, .testimonials, .trust-indicators, .rating, .support {
     margin-bottom: 2rem;
     color: black;
@@ -290,7 +350,7 @@ main {
 }
 
 footer {
-    background: blue;
+    background-image: url(./back\ 2.jpg);
     color: #fff;
     text-align: center;
     padding: 1rem;

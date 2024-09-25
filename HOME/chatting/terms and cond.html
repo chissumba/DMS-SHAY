@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -6,16 +7,29 @@
           <title>upload-documents-form</title>
           <link rel="stylesheet" href="styles.css">
       </head>
-      <body style="background-image: url(./business\ 3.jpg); background-repeat: no-repeat; background-size: cover;">
+      <body style="background-image: url(./business\ 11.jpg); background-repeat: no-repeat; background-size: cover;">
           <header>
               <style>
 
               body{
-                background-image: url(./business\ 3.jpg);
+                background-image: url(./back\ 1.jpeg);
                 color: white;
                 font-size: x-large;
 
               }
+
+              header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-image: url(./business\ 8.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    animation: fallDown 5s ease-out;
+
+}
 
               .container {
               display: flex;
@@ -60,7 +74,7 @@
     display: inline-block;
     margin-top: 20px;
     padding: 12px 25px;
-    background-color: purple;
+    background-color: transparent;
     color: white;
     border: none;
     border-radius: 5px;
@@ -74,6 +88,17 @@
 .cta-btn:hover {
     background: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
 } 
+
+footer {
+    background-image: url(./back\ 2.jpg);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+}
           </style>
               <div class="container">
                   <div class="logo">
@@ -81,63 +106,54 @@
                   </div>
                   <nav>
                       <ul>
-                          <li><a href="./index.html">Home</a></li>
+                          <li><a href="./khanda@.html">Home</a></li>
                           <li><a href="./about.html">About</a></li>
-                          <li><a href="service.html">Services</a></li>
-                          <li><a href="./Contact.html">Contact</a></li>
-                          <li><a href="login.html">Login</a></li>
+                          <li><a href="./service@.html">Services</a></li>
+                          <li><a href="./contact@.html">Contact</a></li>
+                          <li><a href="./sign up@.html">Login</a></li>
                       </ul>
                   </nav>
               </div>
             </header>
-    <main>
-        <section class="terms-and-conditions-section">
-            <h1>Terms and Conditions</h1>
-            <p>Last updated: 24 August 2024</p>
-            <h2>Introduction</h2>
-            <p>Welcome to Echo Flux DMS, a document management system website. These terms and conditions outline the rules and guidelines for using our website and services.</p>
-            <h2>Using Our Website</h2>
-            <p>By using our website, you agree to these terms and conditions. If you do not agree, please do not use our website.</p>
-            <h2>Intellectual Property</h2>
-            <p>All content on our website is owned by Echo Flux DMS and is protected by copyright, trademark, and other intellectual property laws.</p>
-            <h2>User Accounts</h2>
-            <p>To use our services, you must create a user account. You are responsible for maintaining the confidentiality of your account information.</p>
-            <h2>Disclaimer</h2>
-            <p>We make no warranties or representations about the accuracy or completeness of our website or services.</p>
-            <h2>Limited Liability</h2>
-            <p>In no event will we be liable for any damages arising out of the use of our website or services.</p>
-            <h2>Governing Law</h2>
-            <p>These terms and conditions will be governed by and construed in accordance with the laws of Echo Flux DMS.</p>
-            <h2>Changes to Terms and Conditions</h2>
-            <p>We reserve the right to modify or update these terms and conditions at any time without notice.</p>
-            <H3>By accepting, you are agreeing to our terms and conditions</H3>
-            <a href="./User page@.html" class="cta-button" style="background-position: center;">ACCEPT</a>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 ECHO FLUX DMS. All rights reserved.</p>
-    </footer>
+
+            <body>
+<h1>By clicking accept, you agreeing to our terms and conditions</h1>
+
+<button onclick="typeWriter()">Terms And Conditions</button>
+
+<p id="demo" style="margin-bottom: 20px;
+padding: 20px;
+border: 3px solid blue;
+border-radius: 10px;
+width: 100%;
+padding: 15px;
+background: #222;
+color: white;
+border: 2px solid magenta;
+border-radius: 5px;
+box-shadow: 0 0 5px magenta, 0 0 15px magenta, 0 0 20px magenta;
+transition: box-shadow 0.4s ease, background 0.4s ease;
+outline: none;"></p>
+
+<script>
+var i = 0;
+var txt = 'Terms and Conditions. Last updated: 24 August 2024. Introduction. Welcome to Echo Flux DMS, a document management system website.These terms and conditions outline the rules and guidelines for using our website and services. Using Our Website. By using our website, you agree to these terms and conditions. If you do not agree, please do not use our website. Intellectual Property; All content on our website is owned by Echo Flux DMS and is protected by copyright, trademark, and other intellectual property laws.User Accounts: To use our services, you must create a user account. You are responsible for maintaining the confidentiality of your account information.DisclaimerWe make no warranties or representations about the accuracy or completeness of our website or services.Limited Liability.In no event will we be liable for any damages arising out of the use of our website or services..Governing Law;These terms and conditions will be governed by and construed in accordance with the laws of Echo Flux DMS.Changes to Terms and Conditions</h2>We reserve the right to modify or update these terms and conditions at any time without notice.By accepting, you are agreeing to our terms and conditions' 
+var speed = 20;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+
+<a href="./User page@.html" class="cta-button" style="background-position: center;">ACCEPT</a>
+<a href="./khanda@.html" class="cta-button" style="background-position: center;">Decline</a>
+
+<footer>
+  <p>&copy; 2023 ECHO FLUX DMS. All rights reserved.</p>
+</footer>
 </body>
 </html>
-
-<style>
-
-.terms-and-conditions-section {
-    padding: 2em;
-    text-align: center;
-}
-
-.terms-and-conditions-section h1 {
-    margin-bottom: 10px;
-}
-
-.terms-and-conditions-section p {
-    margin-bottom: 20px;
-}
-
-.terms-and-conditions-section h2 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-</style>

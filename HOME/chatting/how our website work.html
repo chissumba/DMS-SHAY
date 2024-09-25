@@ -1,73 +1,81 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>upload-documents-form</title>
-          <link rel="stylesheet" href="styles.css">
-      </head>
-      <body style="background-color: lightpink; font-size: x-large;">
-          <header>
-              <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMS Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header>
+        <div class="logo">
+            <img src="./Screenshot 2024-08-28 173454.png" alt="DMS Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./khanda@.html">Home</a></li>
+                <li><a href="./service@.html">Services</a></li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="./sign up@.html">Login</a></li>
+                <li><a href="./contact@.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-              .body{
-                background-color: skyblue;
+    
+<!-- Link to your CSS file -->
+    <style>
+        /* Basic styles for the landing page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-image: url(./black-hole-wackiness-v0-1dnbj2xcmccc1.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
-              }
+        header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-image: url(./business\ 8.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    animation: fallDown 5s ease-out;
 
-              .container {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              max-width: 1200px;
-              margin: 0 auto;
-              padding: 0;
-              text-decoration: none;
-          }
-          
-          .logo img {
-              height: 100px;
-              width: 300px;
-          }
-          nav ul {
-              list-style: none;
-              margin: 0;
-              padding: 0;
-              display: flex;
-              font-size: xx-large;
-          }
-          
-          nav ul li {
-              margin-left: 0px;
-          }
-          
-          nav ul li a {
-              color: white;
-              text-decoration: none;
-              padding: 5px 10px;
-              font-size: xx-large;
-          }
-          
-          nav ul li a:hover {
-              background-color: purple;
-              border-radius: 5px;
-          }    
-          </style>
-              <div class="container">
-                  <div class="logo">
-                      <img src="./LOGO (2).png" alt="Logo">
-                  </div>
-                  <nav>
-                      <ul>
-                          <li><a href="./khanda@.html">Home</a></li>
-                          <li><a href="./about.html">About</a></li>
-                          <li><a href="./service@.html">Services</a></li>
-                          <li><a href="./Contact.html">Contact</a></li>
-                          <li><a href="login.html">Login</a></li>
-                      </ul>
-                  </nav>
-              </div>
-          </header> 
+}
+
+header .logo img {
+    height: 100px;
+    width: 300px;
+    animation: fallDown 5s ease-out;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    font-size: xx-large;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+nav a:hover {
+    color: blue;
+}
+</style>
     <main>
         <section class="how-it-works-section">
             <h1>How it Works</h1>
@@ -76,7 +84,9 @@
                 <li>
                     <h2>Upload Your Documents</h2>
                     <p>Simply click the "Upload" button to upload your documents to our secure server.</p>
-                    <img src="./blue front image dress.png" alt="Upload Documents">
+                    <img src="./blue front image dress.png" alt="Upload Documents" style="  background-image: url(./black-hole-wackiness-v0-1dnbj2xcmccc1.webp);
+                    background-repeat: no-repeat;
+                    background-size: cover;">
                 </li>
                 <li>
                     <h2>Organize Your Documents</h2>
@@ -108,36 +118,59 @@
 .how-it-works-section {
     padding: 2em;
     text-align: center;
+    color: white; 
+  
 }
 
 .how-it-works-section h1 {
     margin-bottom: 10px;
+    background-image: url(./back\ 2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
+
 .how-it-works-section p {
-    margin-bottom: 20px;
+    margin-bottom: 20px;  
+    background-image: url(./back\ 2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
 }
 
 .how-it-works-section ol {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0; 
+    background-image: url(./black-hole-wackiness-v0-1dnbj2xcmccc1.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
 }
 
 .how-it-works-section li {
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
+    background-image: url(./black-hole-wackiness-v0-1dnbj2xcmccc1.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+
 }
 
 .how-it-works-section h2 {
     margin-top: 10px;
     margin-bottom: 10px;
+    background-image: url(./back\ 2.jpg); background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .how-it-works-section img {
     width: 60%;
     height: 100%;
     margin-bottom: 10px;
+    background-image: url(./black-hole-wackiness-v0-1dnbj2xcmccc1.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
 }
+
 
 </style>
 

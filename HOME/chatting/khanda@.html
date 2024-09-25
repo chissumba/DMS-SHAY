@@ -131,16 +131,20 @@ nav a:hover {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 25px;
-    background-color: purple;
+    background-color: transparent;
     color: white;
     border: none;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    animation: bounce 2s infinite;
+    animation: fallDown 2s ease-out;
+    box-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 50px #0ff;
 }
 
+.cta-button:hover{
+    background-color: #0ff;
+}
 
 .footer {
     background-color: #333;
@@ -158,13 +162,13 @@ nav a:hover {
 <section class="hero" id="home">
 <h1>Welcome to DMS ECHO FLUX</h1>
 <p>Innovative Solutions for Your Business</p>
-<a href="./sign up@.html" class="cta-button">Get Started</a>
+<a href="./sign up@.html" class="cta-button">Get Started!</a>
     
 </section>
     
 
         <div class="hero-section">
-            <h1 style="text-align: center;">Organize Your Documents<br> Seamlessly</h1>
+            <h1 style="text-align: center; background-image: url(./back\ 2.jpg);">Organize Your Documents<br> Seamlessly</h1>
             <p style="text-align: center;">Experience a new way of managing your documents efficiently and securely.</p>
             <button class="cta-button" style="text-align: center;">Latest Update!</button>
         </div>
@@ -187,7 +191,36 @@ nav a:hover {
             <p>Collaborate with your team in real-time, with seamless sharing and editing tools.</p>
         </div>
     </section>
-    
+<style>
+    .container {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .container img {vertical-align: middle;}
+      
+      .container .content {
+        position: absolute;
+        bottom: 0;
+        background: rgb(0, 0, 0); /* Fallback color */
+        background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+      }
+      </style>
+
+    <div class="container">
+      <img src="./business 9.jpeg" alt="Notebook" style="width:100%;">
+      <div class="content">
+        <h1>DMS ECHO FLUX</h1>
+        <p>Unleash Your Documents</p>
+      </div>
+    </div>
+
+    </style>
+
     <section id="stats" class="stats-section">
         <h2 style="color: white;">Document Usage Statistics</h2>
         <div class="bar-chart">
@@ -223,6 +256,11 @@ nav a:hover {
         padding: 10px;
         position: relative;
         overflow: hidden;
+        border: 2px solid #0ff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 20px #0ff;
+    transition: box-shadow 0.4s ease, background 0.4s ease;
+    outline: none;
     }
     
     .bar::after {
@@ -343,20 +381,9 @@ body {
     margin-bottom: 30px;
 }
 
-.cta-button {
-    background-color: purple;
-    color: #333;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
 
-.cta-button:hover {
-    background-color: #ffc107;
-}
+
+
 
 .features-section {
     padding: 60px 20px;
@@ -375,6 +402,11 @@ body {
     margin: 20px;
     width: 250px;
     transition: transform 0.3s ease, background 0.3s ease;
+    border: 2px solid #0ff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 20px #0ff;
+    transition: box-shadow 0.4s ease, background 0.4s ease;
+    outline: none;
 }
 
 .feature:hover {
@@ -391,6 +423,9 @@ body {
 .about-section, .contact-section {
     padding: 60px 20px;
     text-align: center;
+    background-image: url(./back\ 2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .contact-form {
@@ -400,34 +435,55 @@ body {
 
 .contact-form input, .contact-form textarea {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 15px;
+    background: #111;
+    color: #0ff;
+    border: 2px solid #0ff;
     border-radius: 5px;
-    border: none;
+    box-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 20px #0ff;
+    transition: box-shadow 0.4s ease, background 0.4s ease;
+    outline: none;
 }
 
 .contact-form button {
-    background-color: purple;
-    color: darkgray;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: transparent;
+    color: #0ff;
+    border: 2px solid #0ff;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: x-large;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
+
+.btn:hover {
+    background-color: #0ff;
+    color: #111;
+    box-shadow: pu;
+}
+
 
 .contact-form button:hover {
-    background-color: #ffc107;
+    background-color: #0ff;
 }
 
-.footer {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    .footer {
+    border: 2px solid blue;
+    border-radius: 5px;
+    box-shadow: 0 0 5px turquoise, 0 0 15px turquoise, 0 0 20px turquoise;
+    transition: box-shadow 0.4s ease, background 0.4s ease;
+    outline: none;
+    background-image: url(./back\ 2.jpg);
+    color: #fff;
     text-align: center;
-    font-size: x-large;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
 }
+
 
 /* Additional styles for sticky navigation */
 .navbar.sticky {
@@ -560,4 +616,3 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <section id="stats" class="stats-section">
-   
